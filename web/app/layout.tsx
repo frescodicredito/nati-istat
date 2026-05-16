@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 
+import { Footer } from "@/components/layout/Footer";
+import { ReadingProgress } from "@/components/layout/ReadingProgress";
+import { TopNav } from "@/components/layout/TopNav";
 import { mono, sans, serif } from "@/lib/fonts";
 import "./globals.css";
 
@@ -45,7 +48,12 @@ export default function RootLayout({
       lang="it"
       className={`${serif.variable} ${sans.variable} ${mono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <ReadingProgress />
+        <TopNav />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

@@ -16,6 +16,7 @@ export const colors = {
   historical: "#a8260b",
 
   // Accent: proiezioni ISTAT (gradiente per scenario)
+  projectionBand: "#c8d8e8",
   projectionLower90: "#c8d8e8",
   projectionLower80: "#a8c0d8",
   projectionLower50: "#7b9fc4",

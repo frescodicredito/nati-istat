@@ -46,3 +46,4 @@ yarn-error.log*
 # Build artifacts
 dist/
 build/
+.vercel

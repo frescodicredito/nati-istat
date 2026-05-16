@@ -4,15 +4,23 @@
 
 ---
 
-## 🔴 Bloccato su iterazione visiva
+## 🔴 Blocchi prioritari
 
-### Hero design finale
+### 1. Cap 4 — vera spiegazione metodologica del bias (priorità ALTA)
+- **Cosa**: espandere il cap 4 con una vera analisi delle ragioni per cui i modelli ISTAT/Eurostat/UN sovrastimano sistematicamente il TFT italiano. Oggi il cap 4 elenca 3 assunzioni in bullet point ma non spiega da dove vengono né perché falliscono per l'Italia.
+- **Perché bloccato**: richiede sessione dedicata con ricerca su letteratura accademica + scrittura curata. Non è un quick fix.
+- **Single entry point**: `docs/superpowers/specs/2026-05-16-cap4-spiegazione-bias-bozza.md` — spec completa con 6 punti da articolare, fonti da consultare, struttura editoriale, constraint di tono
+- **Effort post-sblocco**: 3.5-5 ore (ricerca paper 1-1.5h + scrittura 1.5h + integrazione 1h + deploy)
+- **Trigger sblocco**: prossima sessione dedicata
+- **Raccomandazione**: bozza markdown prima → conferma utente sui contenuti → integrazione codice. Eseguire PRIMA di Hero design (è il vero gap di contenuto, non solo design).
+
+### 2. Hero design finale (priorità media)
 - **Cosa**: rifare bene la sezione Hero (above-the-fold) del sito
-- **Perché bloccato**: feedback utente "fai un'analisi e cura molto questa parte". Iterazioni multiple in sessione corrente non hanno ancora trovato la versione definitiva. Stato corrente è WIP commit `5b455cb` non visualmente verificato.
-- **Single entry point**: `web/components/Hero.tsx` + `HANDOFF-SESSION-NEXT.md` sezione "Unico blocco residuo: Hero design"
+- **Perché bloccato**: feedback utente "fai un'analisi e cura molto questa parte". Iterazioni multiple in sessione corrente non hanno trovato la versione definitiva. Stato corrente è WIP commit `5b455cb` non visualmente verificato (issue noti: asse X potenzialmente tagliato).
+- **Single entry point**: `web/components/Hero.tsx` + `HANDOFF-SESSION-NEXT.md` sezione "Blocco residuo 2"
 - **Effort post-sblocco**: 1-2 ore di iterazione visiva con browser audit
-- **Trigger sblocco**: prossima sessione, browser audit + scelta tra opzioni A/B/C/D documentate in HANDOFF
-- **Raccomandazione**: cominciare con visual audit live (Chrome MCP), poi mockup statici 2-3 versioni, allineamento con utente, implementazione
+- **Trigger sblocco**: dopo cap 4 (così il Hero può eventualmente puntare al nuovo cap 4 come "spiegazione" oltre che "dimostrazione")
+- **Raccomandazione**: visual audit live (Chrome MCP) → mockup statici 2-3 versioni → allineamento con utente → implementazione
 
 ---
 

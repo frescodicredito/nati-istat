@@ -6,7 +6,7 @@
 
 ## Stato corrente in una riga
 
-**Sito live e completo (https://nati-istat.vercel.app), repo pubblico (https://github.com/frescodicredito/nati-istat). Unico blocco residuo: Hero da rifare bene visivamente — feedback utente esplicito.**
+**Sito live e completo (https://nati-istat.vercel.app), repo pubblico (https://github.com/frescodicredito/nati-istat). Due blocchi residui prioritari: (1) Hero design da rifare bene visivamente, (2) cap 4 da espandere con vera spiegazione metodologica del bias.**
 
 ---
 
@@ -52,7 +52,33 @@ Sessione molto lunga (~7-8 ore di lavoro effettivo) di costruzione end-to-end + 
 
 ---
 
-## Unico blocco residuo: Hero design
+## Blocchi residui prioritari
+
+### 🔴 1. Cap 4 — vera spiegazione metodologica del bias (NUOVO, priorità ALTA)
+
+**Domanda utente che ha fatto emergere il gap:**
+> "ma questo sito spiega perché il dato viene sovrastimato? quali sono le ragioni per cui stimano una curva che va contro al trend?"
+
+**Diagnosi:** il cap 4 attuale elenca 3 assunzioni di modello in bullet point ma non spiega:
+- Da dove vengono metodologicamente quelle assunzioni
+- Perché i demografi continuano ad adottarle nonostante il bias documentato dal cap 3
+- Quali inerzie istituzionali tengono in vita assunzioni smentite dai dati italiani
+
+Questo è il **vero contenuto investigativo che manca al sito**. Per il target audience italiano data-savvy è quello che giustifica il tono affilato del long-read.
+
+**Specifica completa di cosa scrivere e come:** `docs/superpowers/specs/2026-05-16-cap4-spiegazione-bias-bozza.md`
+
+Quella spec contiene:
+- 6 punti metodologici da articolare (mean reversion, catch-up fertility, convergenza, componente straniere mal calibrata, aggiornamento tardivo, bias istituzionale)
+- Letteratura di riferimento da consultare (Bongaarts & Sobotka, Goldstein, Lutz, Caltabiano, Wittgenstein Centre)
+- Struttura editoriale proposta
+- Constraint di tono (rigoroso, non polemico, citazioni academic-style)
+- Stima effort: 3.5-5 ore in sessione dedicata
+- Strategia esecuzione: prima ricerca, poi bozza markdown, poi integrazione codice React
+
+**Single entry point:** `docs/superpowers/specs/2026-05-16-cap4-spiegazione-bias-bozza.md` + `web/components/chapters/Chapter4Assumptions.tsx`
+
+### 🔴 2. Hero design — feedback visivo non risolto
 
 L'utente ha visto il Hero in due iterazioni e ha espresso feedback esplicito:
 

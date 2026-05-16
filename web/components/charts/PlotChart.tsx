@@ -18,6 +18,11 @@ interface PlotChartProps {
    * scrolla orizzontale. Default 320 (mobile-safe).
    */
   minWidth?: number;
+  /**
+   * Cap massimo sull'altezza in pixel. Utile per chart Hero che devono
+   * stare nel viewport. Se omesso, height = width * aspectRatio.
+   */
+  maxHeight?: number;
 }
 
 /**
@@ -32,6 +37,7 @@ export function PlotChart({
   className,
   aspectRatio = 0.45,
   minWidth = 320,
+  maxHeight,
 }: PlotChartProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(0);
@@ -57,7 +63,8 @@ export function PlotChart({
   useEffect(() => {
     const node = containerRef.current;
     if (!node || width === 0) return;
-    const dynamicHeight = plotOptions.height ?? Math.round(width * aspectRatio);
+    let dynamicHeight = plotOptions.height ?? Math.round(width * aspectRatio);
+    if (maxHeight !== undefined) dynamicHeight = Math.min(dynamicHeight, maxHeight);
     const opts: Plot.PlotOptions = {
       ...plotOptions,
       width,
@@ -76,13 +83,13 @@ export function PlotChart({
     };
   }, [plotOptions, alt, width, themeVersion, aspectRatio]);
 
+  const placeholderStyle: React.CSSProperties = maxHeight
+    ? { maxHeight: `${maxHeight}px`, aspectRatio: `1 / ${aspectRatio}` }
+    : { aspectRatio: `1 / ${aspectRatio}` };
+
   return (
     <figure className={className}>
-      <div
-        ref={containerRef}
-        className="w-full"
-        style={{ aspectRatio: `1 / ${aspectRatio}` }}
-      />
+      <div ref={containerRef} className="w-full" style={placeholderStyle} />
       {caption && (
         <figcaption className="mt-3 px-6 text-xs leading-relaxed text-[color:var(--color-fg-muted)] sm:px-0">
           {caption}

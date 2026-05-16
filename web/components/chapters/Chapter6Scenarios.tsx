@@ -139,7 +139,6 @@ export function Chapter6Scenarios() {
                 colors.scenarioAlt,
                 "#d97706",
               ],
-              legend: true,
             },
             marks: [
               Plot.lineY(series, {

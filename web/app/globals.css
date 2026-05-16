@@ -11,10 +11,10 @@
 :root {
   --color-bg: #ffffff;
   --color-fg: #1a1a1a;
-  --color-fg-muted: #5a5a5a;
-  --color-fg-subtle: #888888;
-  --color-border: #e5e5e5;
-  --color-surface: #fafafa;
+  --color-fg-muted: #525252;
+  --color-fg-subtle: #6e6e6e;
+  --color-border: #d8d8d8;
+  --color-surface: #f5f5f5;
 
   --color-historical: #a8260b;
   --color-projection: #1e5180;
@@ -24,10 +24,10 @@
 
 .dark {
   --color-bg: #0e1116;
-  --color-fg: #e8e6e3;
-  --color-fg-muted: #a8a59f;
-  --color-fg-subtle: #6e6c67;
-  --color-border: #232830;
+  --color-fg: #ececec;
+  --color-fg-muted: #b8b5b0;
+  --color-fg-subtle: #9b9893;
+  --color-border: #2c323b;
   --color-surface: #161a21;
 
   --color-historical: #e8623d;

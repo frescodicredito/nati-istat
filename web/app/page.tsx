@@ -5,10 +5,12 @@ import { Chapter3TrackRecord } from "@/components/chapters/Chapter3TrackRecord";
 import { Chapter4Assumptions } from "@/components/chapters/Chapter4Assumptions";
 import { Chapter5Cascade } from "@/components/chapters/Chapter5Cascade";
 import { Chapter6Scenarios } from "@/components/chapters/Chapter6Scenarios";
+import { Hero } from "@/components/Hero";
 
 export default function Home() {
   return (
     <>
+      <Hero />
       <Chapter0Opening />
       <Chapter1Starting />
       <Chapter2Decomposition />

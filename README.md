@@ -16,11 +16,14 @@ Long-read editoriale e dashboard analitica sulle proiezioni demografiche ISTAT d
 ## Riproducibilità
 
 ```bash
+git clone https://github.com/frescodicredito/nati-istat
+cd nati-istat
+
 # Rigenera dati processed da snapshot frozen
 cd pipeline && uv sync && uv run python build.py --validate-only
 
 # Build sito locale
-cd web && pnpm install && pnpm dev
+cd ../web && pnpm install && pnpm dev
 ```
 
 ## Licenze

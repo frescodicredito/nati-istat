@@ -1,12 +1,15 @@
 /**
- * Tipizzato JSON loader. Import statici risolti a build time da
- * data/processed/ committed nel repo.
+ * Tipizzato JSON loader. Import statici risolti a build time.
+ *
+ * I file in lib/_data/ sono copiati da pipeline/data/processed/ via
+ * scripts/copy-data.mjs (predev/prebuild). Sono gitignored: la fonte
+ * canonica resta data/processed/ nel repo root.
  */
 
-import birthsCitizenshipRaw from "@/../data/processed/tfr_by_citizenship.json";
-import projection2024Raw from "@/../data/processed/projection_2024.json";
-import scenariosRaw from "@/../data/processed/scenarios_comparison.json";
-import tfrHistoricalRaw from "@/../data/processed/tfr_historical.json";
+import birthsCitizenshipRaw from "./_data/tfr_by_citizenship.json";
+import projection2024Raw from "./_data/projection_2024.json";
+import scenariosRaw from "./_data/scenarios_comparison.json";
+import tfrHistoricalRaw from "./_data/tfr_historical.json";
 
 import type {
   DatasetWrapper,

@@ -32,8 +32,7 @@ def test_projection_covers_full_horizon(projection):
 def test_projection_scenarios_present(projection):
     """Tutti i 7 scenari ISTAT presenti."""
     scenarios = {r["scenario"] for r in projection["data"]}
-    expected = {"mediano", "lower_50", "lower_80", "lower_90",
-                "upper_50", "upper_80", "upper_90"}
+    expected = {"mediano", "lower_50", "lower_80", "lower_90", "upper_50", "upper_80", "upper_90"}
     assert expected <= scenarios
 
 

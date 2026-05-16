@@ -44,9 +44,7 @@ def build_scenarios_comparison(processed_dir: Path) -> dict:
         ]
 
     return {
-        "historical": [
-            {"year": int(r["year"]), "tfr": float(r["tfr"])} for r in historical_raw
-        ],
+        "historical": [{"year": int(r["year"]), "tfr": float(r["tfr"])} for r in historical_raw],
         "istat_mediano": _scenario_data("mediano"),
         "istat_lower_90": _scenario_data("lower_90"),
         "istat_upper_90": _scenario_data("upper_90"),

@@ -92,8 +92,9 @@ def _resolve_or_download(
     return snapshot_path
 
 
-def _audit_for(source_id: str, snapshot_date: date, pipeline_ver: str,
-               transforms: list[str], count: int) -> AuditTrail:
+def _audit_for(
+    source_id: str, snapshot_date: date, pipeline_ver: str, transforms: list[str], count: int
+) -> AuditTrail:
     source = get_source(source_id)
     return AuditTrail(
         source=f"ISTAT {source.snapshot_dataset_id}",
@@ -113,7 +114,9 @@ def build_d1(args: argparse.Namespace, snapshot_date: date, pipeline_ver: str) -
     raw = load_istat_snapshot(snapshot_path)
     normalized = normalize_tfr_dataframe(raw)
     audit = _audit_for(
-        "D1", snapshot_date, pipeline_ver,
+        "D1",
+        snapshot_date,
+        pipeline_ver,
         ["filter_italia_total", "normalize_tfr_dataframe"],
         len(normalized),
     )
@@ -124,8 +127,10 @@ def build_d1(args: argparse.Namespace, snapshot_date: date, pipeline_ver: str) -
     )
     logger.info(
         "[D1] %s: %d punti (range %d-%d)",
-        output_path.name, len(normalized),
-        normalized["year"].min(), normalized["year"].max(),
+        output_path.name,
+        len(normalized),
+        normalized["year"].min(),
+        normalized["year"].max(),
     )
 
 
@@ -135,7 +140,9 @@ def build_d3(args: argparse.Namespace, snapshot_date: date, pipeline_ver: str) -
     raw = load_istat_snapshot(snapshot_path)
     normalized = normalize_tfr_by_citizenship(raw)
     audit = _audit_for(
-        "D3", snapshot_date, pipeline_ver,
+        "D3",
+        snapshot_date,
+        pipeline_ver,
         ["filter_italia_citizenship", "normalize_tfr_by_citizenship"],
         len(normalized),
     )
@@ -146,7 +153,8 @@ def build_d3(args: argparse.Namespace, snapshot_date: date, pipeline_ver: str) -
     )
     logger.info(
         "[D3] %s: %d punti (italiane+straniere)",
-        output_path.name, len(normalized),
+        output_path.name,
+        len(normalized),
     )
 
 
@@ -156,7 +164,9 @@ def build_d9(args: argparse.Namespace, snapshot_date: date, pipeline_ver: str) -
     raw = load_istat_snapshot(snapshot_path)
     normalized = normalize_projection_2024(raw, indicator="TFR")
     audit = _audit_for(
-        "D9", snapshot_date, pipeline_ver,
+        "D9",
+        snapshot_date,
+        pipeline_ver,
         ["filter_italia_tfr", "normalize_projection_2024"],
         len(normalized),
     )
@@ -168,7 +178,9 @@ def build_d9(args: argparse.Namespace, snapshot_date: date, pipeline_ver: str) -
     n_scenarios = normalized["scenario"].nunique()
     logger.info(
         "[D9] %s: %d punti su %d scenari (2024-2080)",
-        output_path.name, len(normalized), n_scenarios,
+        output_path.name,
+        len(normalized),
+        n_scenarios,
     )
 
 
@@ -214,12 +226,20 @@ def _find_most_recent_snapshot(source_folder: str, dataset_id: str, extension: s
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="nati-istat pipeline build")
-    parser.add_argument("--validate-only", action="store_true",
-                        help="Solo validation su snapshot esistenti, no download")
-    parser.add_argument("--no-download", action="store_true",
-                        help="Skip download, usa snapshot frozen")
-    parser.add_argument("--snapshot-date", type=str, default=None,
-                        help="Data snapshot override (YYYY-MM-DD), default oggi")
+    parser.add_argument(
+        "--validate-only",
+        action="store_true",
+        help="Solo validation su snapshot esistenti, no download",
+    )
+    parser.add_argument(
+        "--no-download", action="store_true", help="Skip download, usa snapshot frozen"
+    )
+    parser.add_argument(
+        "--snapshot-date",
+        type=str,
+        default=None,
+        help="Data snapshot override (YYYY-MM-DD), default oggi",
+    )
     args = parser.parse_args()
 
     snapshot_date = date.fromisoformat(args.snapshot_date) if args.snapshot_date else date.today()

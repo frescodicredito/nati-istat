@@ -1,0 +1,20 @@
+{
+  "dataset_id": "25_944_DF_DCIS_ARCH_FEC_6",
+  "url": "http://sdmx.istat.it/SDMXWS/rest/data/25_944_DF_DCIS_ARCH_FEC_6",
+  "sha256": "ffddc7f418ebc16eaf4dc79ff407bbdab263fd25ba904fddc6289b7b99ff9c9d",
+  "size_bytes": 70299,
+  "downloaded_at": "2026-05-16T12:14:14.698154+00:00",
+  "path": "/Users/fdicredico/ricerche/nati-istat/data/raw/istat/2026-05-16/25_944_DF_DCIS_ARCH_FEC_6.csv.gz",
+  "rows": 18176,
+  "columns": [
+    "TIME_PERIOD",
+    "FREQ",
+    "RESIDENCE_TERR",
+    "DATA_TYPE",
+    "MOTHER_AGE",
+    "BIRTH_ORDER",
+    "YEAR_BIRTH_MOTHER",
+    "YEAR_EVENT",
+    "value"
+  ]
+}

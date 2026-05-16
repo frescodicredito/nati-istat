@@ -22,6 +22,7 @@ from sources.istat_tfr_citizenship import normalize_tfr_by_citizenship
 from sources.registry import get_source
 from sources.schema import AuditTrail
 from sources.snapshot import resolve_snapshot_path
+from sources.un_wpp import download_un_wpp, normalize_un_wpp_tfr
 from transforms.aggregator import build_scenarios_comparison
 
 logging.basicConfig(
@@ -184,6 +185,53 @@ def build_d9(args: argparse.Namespace, snapshot_date: date, pipeline_ver: str) -
     )
 
 
+def build_d11(args: argparse.Namespace, snapshot_date: date, pipeline_ver: str) -> None:
+    """D11: UN World Population Prospects TFR Italia."""
+    source = get_source("D11")
+    snapshot_path = resolve_snapshot_path(
+        DATA_RAW,
+        source.snapshot_source,
+        source.snapshot_dataset_id,
+        snapshot_date,
+        extension=source.snapshot_extension,
+    )
+
+    if not args.no_download and not args.validate_only and not snapshot_path.exists():
+        download_un_wpp(snapshot_path)
+
+    if not snapshot_path.exists():
+        snapshot_path = _find_most_recent_snapshot(
+            source.snapshot_source, source.snapshot_dataset_id, source.snapshot_extension
+        )
+
+    raw = load_istat_snapshot(snapshot_path)
+    normalized = normalize_un_wpp_tfr(raw)
+    audit = AuditTrail(
+        source="UN WPP 2024 Demographic Indicators (Italy)",
+        source_url="https://population.un.org/wpp/",
+        downloaded_at=datetime.combine(snapshot_date, datetime.min.time(), tzinfo=UTC),
+        pipeline_version=pipeline_ver,
+        transforms_applied=["filter_italia", "normalize_un_wpp_tfr"],
+        validation_passed=True,
+        datapoint_count=len(normalized),
+        notes=source.description,
+    )
+    output_path = write_dataset(
+        "un_wpp_italy.json",
+        normalized.to_dict(orient="records"),
+        audit,
+    )
+    n_scenarios = normalized["scenario"].nunique()
+    logger.info(
+        "[D11] %s: %d punti su %d scenari (range %d-%d)",
+        output_path.name,
+        len(normalized),
+        n_scenarios,
+        normalized["year"].min(),
+        normalized["year"].max(),
+    )
+
+
 def build_aggregates(snapshot_date: date, pipeline_ver: str) -> None:
     """Costruisce JSON aggregati per consumo frontend.
 
@@ -250,8 +298,8 @@ def main() -> int:
         build_d1(args, snapshot_date, pipeline_ver)
         build_d3(args, snapshot_date, pipeline_ver)
         build_d9(args, snapshot_date, pipeline_ver)
+        build_d11(args, snapshot_date, pipeline_ver)
         build_aggregates(snapshot_date, pipeline_ver)
-        # D11 UN WPP + archive proiezioni storiche aggiunti in seguito
     except Exception:
         logger.exception("Build fallita")
         return 1

@@ -1,18 +1,206 @@
 {
   "audit": {
-    "source": "ISTAT 25_326_DF_DCIS_FECONDITA1_5",
-    "source_url": "http://sdmx.istat.it/SDMXWS/rest/data/25_326_DF_DCIS_FECONDITA1_5",
+    "source": "ISTAT 25_944_DF_DCIS_ARCH_FEC_6",
+    "source_url": "http://sdmx.istat.it/SDMXWS/rest/data/25_944_DF_DCIS_ARCH_FEC_6",
     "downloaded_at": "2026-05-16T00:00:00Z",
-    "pipeline_version": "7b6c542",
+    "pipeline_version": "9121af5",
     "transforms_applied": [
       "filter_italia_total",
       "normalize_tfr_dataframe"
     ],
     "validation_passed": true,
-    "datapoint_count": 26,
-    "notes": "TFR Italia 1999-2024 (dataset condiviso con D3)"
+    "datapoint_count": 73,
+    "notes": "TFR storico Italia 1952-2024 (archive completo)"
   },
   "data": [
+    {
+      "year": 1952,
+      "tfr": 2.34
+    },
+    {
+      "year": 1953,
+      "tfr": 2.31
+    },
+    {
+      "year": 1954,
+      "tfr": 2.35
+    },
+    {
+      "year": 1955,
+      "tfr": 2.33
+    },
+    {
+      "year": 1956,
+      "tfr": 2.34
+    },
+    {
+      "year": 1957,
+      "tfr": 2.33
+    },
+    {
+      "year": 1958,
+      "tfr": 2.31
+    },
+    {
+      "year": 1959,
+      "tfr": 2.38
+    },
+    {
+      "year": 1960,
+      "tfr": 2.41
+    },
+    {
+      "year": 1961,
+      "tfr": 2.41
+    },
+    {
+      "year": 1962,
+      "tfr": 2.46
+    },
+    {
+      "year": 1963,
+      "tfr": 2.55
+    },
+    {
+      "year": 1964,
+      "tfr": 2.7
+    },
+    {
+      "year": 1965,
+      "tfr": 2.66
+    },
+    {
+      "year": 1966,
+      "tfr": 2.62
+    },
+    {
+      "year": 1967,
+      "tfr": 2.53
+    },
+    {
+      "year": 1968,
+      "tfr": 2.49
+    },
+    {
+      "year": 1969,
+      "tfr": 2.51
+    },
+    {
+      "year": 1970,
+      "tfr": 2.42
+    },
+    {
+      "year": 1971,
+      "tfr": 2.41
+    },
+    {
+      "year": 1972,
+      "tfr": 2.36
+    },
+    {
+      "year": 1973,
+      "tfr": 2.34
+    },
+    {
+      "year": 1974,
+      "tfr": 2.33
+    },
+    {
+      "year": 1975,
+      "tfr": 2.2
+    },
+    {
+      "year": 1976,
+      "tfr": 2.11
+    },
+    {
+      "year": 1977,
+      "tfr": 1.97
+    },
+    {
+      "year": 1978,
+      "tfr": 1.87
+    },
+    {
+      "year": 1979,
+      "tfr": 1.76
+    },
+    {
+      "year": 1980,
+      "tfr": 1.68
+    },
+    {
+      "year": 1981,
+      "tfr": 1.6
+    },
+    {
+      "year": 1982,
+      "tfr": 1.6
+    },
+    {
+      "year": 1983,
+      "tfr": 1.54
+    },
+    {
+      "year": 1984,
+      "tfr": 1.48
+    },
+    {
+      "year": 1985,
+      "tfr": 1.45
+    },
+    {
+      "year": 1986,
+      "tfr": 1.37
+    },
+    {
+      "year": 1987,
+      "tfr": 1.35
+    },
+    {
+      "year": 1988,
+      "tfr": 1.38
+    },
+    {
+      "year": 1989,
+      "tfr": 1.35
+    },
+    {
+      "year": 1990,
+      "tfr": 1.36
+    },
+    {
+      "year": 1991,
+      "tfr": 1.32
+    },
+    {
+      "year": 1992,
+      "tfr": 1.32
+    },
+    {
+      "year": 1993,
+      "tfr": 1.26
+    },
+    {
+      "year": 1994,
+      "tfr": 1.22
+    },
+    {
+      "year": 1995,
+      "tfr": 1.19
+    },
+    {
+      "year": 1996,
+      "tfr": 1.22
+    },
+    {
+      "year": 1997,
+      "tfr": 1.23
+    },
+    {
+      "year": 1998,
+      "tfr": 1.21
+    },
     {
       "year": 1999,
       "tfr": 1.23

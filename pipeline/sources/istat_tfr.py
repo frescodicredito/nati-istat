@@ -1,41 +1,42 @@
-"""ISTAT D1: Tasso di Fecondità Totale Italia 1999-2024.
+"""ISTAT D1: Tasso di Fecondità Totale storico 1952-2024.
 
-Dataset SDMX: 25_326_DF_DCIS_FECONDITA1_5 (Total fertility rate by event year
-and mother's citizenship).
+Dataset SDMX: 25_944_DF_DCIS_ARCH_FEC_6 (Total fertility rate by event year
+and birth order, dall'archivio storico ISTAT).
 
-Lo stesso snapshot viene usato anche da D3 (decomposizione per cittadinanza)
-con un filtro diverso — vedi istat_tfr_citizenship.py.
-
-Filtro per D1: REF_AREA=IT + CITIZENSHIP=TOTAL.
+Filtro applicato: RESIDENCE_TERR=IT, BIRTH_ORDER=ALL, YEAR_BIRTH_MOTHER=ALL.
+YEAR_EVENT è l'anno effettivo del TFR.
 """
 
 import pandas as pd
 
 TFR_MIN_PLAUSIBLE = 0.5
-TFR_MAX_PLAUSIBLE = 3.0
+TFR_MAX_PLAUSIBLE = 3.5  # Innalzato per baby boom 1964 (~2.7)
 
 
 def normalize_tfr_dataframe(raw: pd.DataFrame) -> pd.DataFrame:
     """Filtra Italia totale e normalizza schema {year, tfr}.
 
-    Schema input atteso (long-form da SDMX): colonne TIME_PERIOD, REF_AREA,
-    CITIZENSHIP, value (più altre dimensioni ignorate).
+    Schema input: long-form SDMX con colonne YEAR_EVENT, RESIDENCE_TERR,
+    BIRTH_ORDER, YEAR_BIRTH_MOTHER, MOTHER_AGE, value (+ altre ignorate).
 
-    Schema output: year (int), tfr (float), sorted ascending.
+    Schema output: year (int), tfr (float), sorted ascending. Range
+    atteso: 1952-2024.
 
     Raises:
-        ValueError: se TFR fuori range plausibile [0.5, 3.0] o colonne assenti.
+        ValueError: se TFR fuori range plausibile [0.5, 3.5].
     """
     df = raw.copy()
 
-    year_col = _find_column(df, ["TIME_PERIOD", "TIME", "ANNO", "year"])
-    value_col = _find_column(df, ["value", "OBS_VALUE", "VALUE", "OBS_VAL"])
+    # Filtra prima per riduzione cardinalità
+    if "RESIDENCE_TERR" in df.columns:
+        df = df[df["RESIDENCE_TERR"] == "IT"]
+    if "BIRTH_ORDER" in df.columns:
+        df = df[df["BIRTH_ORDER"] == "ALL"]
+    if "YEAR_BIRTH_MOTHER" in df.columns:
+        df = df[df["YEAR_BIRTH_MOTHER"] == "ALL"]
 
-    # Filter Italia totale + citizenship TOTAL se le colonne esistono
-    if "REF_AREA" in df.columns:
-        df = df[df["REF_AREA"] == "IT"]
-    if "CITIZENSHIP" in df.columns:
-        df = df[df["CITIZENSHIP"] == "TOTAL"]
+    year_col = _find_column(df, ["YEAR_EVENT", "TIME_PERIOD", "TIME", "ANNO", "year"])
+    value_col = _find_column(df, ["value", "OBS_VALUE", "VALUE", "OBS_VAL"])
 
     df["year"] = pd.to_numeric(df[year_col], errors="coerce").astype("Int64")
     df["tfr"] = pd.to_numeric(df[value_col], errors="coerce")
@@ -49,13 +50,12 @@ def normalize_tfr_dataframe(raw: pd.DataFrame) -> pd.DataFrame:
             f"{out_of_range[['year', 'tfr']].head().to_dict(orient='records')}"
         )
 
-    result = (
+    return (
         df.groupby("year", as_index=False)
         .agg({"tfr": "mean"})
         .sort_values("year")
-        .reset_index(drop=True)
+        .reset_index(drop=True)[["year", "tfr"]]
     )
-    return result[["year", "tfr"]]
 
 
 def _find_column(df: pd.DataFrame, candidates: list) -> str:

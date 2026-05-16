@@ -47,10 +47,19 @@ export interface ProjectionPoint {
   value: number;
 }
 
+export interface UNWPPPoint {
+  year: number;
+  scenario: "medium" | "estimates" | "low" | "high";
+  value: number;
+}
+
 export interface ScenariosComparison {
   historical: TFRPoint[];
   istat_mediano: { year: number; value: number }[];
+  istat_lower_50: { year: number; value: number }[];
+  istat_upper_50: { year: number; value: number }[];
   istat_lower_90: { year: number; value: number }[];
   istat_upper_90: { year: number; value: number }[];
+  un_medium?: { year: number; value: number }[];
   no_recovery: TFRPoint[];
 }

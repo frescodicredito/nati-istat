@@ -8,7 +8,8 @@ import { projection2024, tfrHistorical } from "@/lib/data";
 import { colors } from "@/lib/theme";
 
 export function Chapter0Opening() {
-  const historical = tfrHistorical.data;
+  // Replica fedele del grafico ISTAT/Kalistat: range 1998-2080, focus moderno
+  const historical = tfrHistorical.data.filter((d) => d.year >= 1998);
   const mediano = projection2024.data.filter((d) => d.scenario === "mediano");
 
   const data = [

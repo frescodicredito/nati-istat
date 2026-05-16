@@ -9,8 +9,10 @@ import { tfrHistorical } from "@/lib/data";
 import { colors } from "@/lib/theme";
 
 const EVENTS = [
-  { year: 2008, tfr: 1.45, label: "Recupero 2008" },
-  { year: 2024, tfr: 1.18, label: "Minimo 2024" },
+  { year: 1964, tfr: 2.7, label: "Baby boom: 2,7" },
+  { year: 1995, tfr: 1.19, label: "Minimo 1995: 1,19" },
+  { year: 2008, tfr: 1.45, label: "Recupero 2008: 1,45" },
+  { year: 2024, tfr: 1.18, label: "2024: 1,18" },
 ];
 
 export function Chapter1Starting() {
@@ -18,22 +20,32 @@ export function Chapter1Starting() {
     <Chapter num={1} id="cap-1" title={chapterContent.c1.title} opening={chapterContent.c1.opening}>
       <div className="mx-auto max-w-[960px] px-6">
         <PlotChart
-          alt="Tasso di fecondità totale italiano dal 1999 al 2024 con annotazioni sul picco 2008 e sul minimo 2024."
-          caption="Fonte: ISTAT DCIS_FECONDITA1, download 2026-05-16. Dataset condiviso con i dati per cittadinanza del capitolo 2."
+          alt="Tasso di fecondità totale italiano dal 1952 al 2024 con annotazioni su baby boom 1964 (2,7), minimo 1995 (1,19), recupero 2008 (1,45), minimo 2024 (1,18)."
+          caption="Fonte: ISTAT archive DCIS_ARCH_FEC, 73 datapoint annuali. La linea orizzontale al livello 2,1 indica la soglia di rimpiazzo generazionale."
           plotOptions={{
             width: 960,
-            height: 420,
+            height: 460,
             marginTop: 30,
-            marginRight: 20,
+            marginRight: 30,
             marginBottom: 40,
             marginLeft: 50,
-            y: { label: "Figli per donna", grid: true, domain: [1.1, 1.55] },
+            y: { label: "Figli per donna", grid: true, domain: [1.0, 2.85] },
             x: { label: null, tickFormat: (d: number) => String(d) },
             marks: [
-              Plot.ruleY([1.18], {
+              Plot.ruleY([2.1], {
                 stroke: colors.fgSubtle,
-                strokeDasharray: "2,3",
-                strokeOpacity: 0.5,
+                strokeDasharray: "3,3",
+                strokeOpacity: 0.6,
+              }),
+              Plot.text([{ year: 1958, value: 2.1 }], {
+                x: "year",
+                y: "value",
+                text: ["Soglia rimpiazzo 2,1"],
+                dy: -6,
+                fontFamily: "var(--font-sans)",
+                fontSize: 10,
+                fill: colors.fgSubtle,
+                textAnchor: "start",
               }),
               Plot.lineY(tfrHistorical.data, {
                 x: "year",
@@ -54,6 +66,7 @@ export function Chapter1Starting() {
                 dy: -14,
                 fontFamily: "var(--font-sans)",
                 fontSize: 11,
+                fontWeight: 500,
                 fill: colors.fg,
                 textAnchor: "middle",
               }),
@@ -63,16 +76,18 @@ export function Chapter1Starting() {
       </div>
       <div className="mx-auto mt-12 max-w-[680px] px-6 text-base leading-relaxed">
         <p>
-          Tra il 1999 e il 2008 il TFR è risalito da 1,23 a 1,45. Da quel
-          punto, declino sostanzialmente continuo: 2010=1,46, 2015=1,35,
-          2020=1,24, 2023=1,20, 2024=1,18. Il dato 2024 è il valore più
-          basso mai registrato — inferiore al minimo del 1995 (1,19), allora
-          considerato il pavimento storico.
+          Il TFR italiano scende dalla soglia di rimpiazzo generazionale (2,1)
+          intorno al 1976 e non ci ritorna più. La discesa dura trent'anni, dal
+          1965 al 1995, riflettendo cambiamenti culturali (modelli familiari,
+          ingresso femminile nel mercato del lavoro, posticipo dell'età del
+          primo figlio) ed economici.
         </p>
         <p>
-          Il prossimo capitolo scompone i 25 anni di osservazione per
-          cittadinanza, mostrando perché la breve risalita 2003-2008 non era
-          un cambio di paradigma.
+          La risalita 2003-2008 da 1,29 a 1,45 è il primo recupero strutturale
+          dal dopoguerra. La spiegazione, mostrata nel capitolo successivo, sta
+          per metà nella crescita della popolazione straniera in età fertile.
+          Dal 2010 il declino riparte: 2015=1,35, 2020=1,24, 2024=1,18, valore
+          inferiore al precedente minimo storico del 1995.
         </p>
       </div>
     </Chapter>

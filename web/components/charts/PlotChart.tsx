@@ -8,21 +8,37 @@ interface PlotChartProps {
   alt: string;
   caption?: React.ReactNode;
   className?: string;
+  /**
+   * Aspect ratio ottimale (height/width). Usato per calcolare height dinamica
+   * dal container width. Default 0.45 (≈ 16:7.2). Override per chart particolari.
+   */
+  aspectRatio?: number;
+  /**
+   * Larghezza minima sotto la quale il chart resta a quella misura e si
+   * scrolla orizzontale. Default 320 (mobile-safe).
+   */
+  minWidth?: number;
 }
 
 /**
- * React wrapper per Observable Plot. Renderizza il chart in un container ref,
- * lo monta su useEffect e lo smonta su cleanup.
- *
- * Si re-monta su evento "theme-change" così picks up new CSS variables
- * (axis text color, grid color) dopo il toggle dark mode.
+ * React wrapper per Observable Plot. Responsive via ResizeObserver:
+ * il chart re-renderizza con la larghezza del container ogni volta che
+ * cambia (resize, theme switch, mount).
  */
-export function PlotChart({ plotOptions, alt, caption, className }: PlotChartProps) {
+export function PlotChart({
+  plotOptions,
+  alt,
+  caption,
+  className,
+  aspectRatio = 0.45,
+  minWidth = 320,
+}: PlotChartProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [version, setVersion] = useState(0);
+  const [width, setWidth] = useState(0);
+  const [themeVersion, setThemeVersion] = useState(0);
 
   useEffect(() => {
-    const onTheme = () => setVersion((v) => v + 1);
+    const onTheme = () => setThemeVersion((v) => v + 1);
     window.addEventListener("theme-change", onTheme);
     return () => window.removeEventListener("theme-change", onTheme);
   }, []);
@@ -30,7 +46,24 @@ export function PlotChart({ plotOptions, alt, caption, className }: PlotChartPro
   useEffect(() => {
     const node = containerRef.current;
     if (!node) return;
-    const plot = Plot.plot(plotOptions);
+    const ro = new ResizeObserver((entries) => {
+      const entry = entries[0];
+      if (entry) setWidth(Math.max(minWidth, Math.round(entry.contentRect.width)));
+    });
+    ro.observe(node);
+    return () => ro.disconnect();
+  }, [minWidth]);
+
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node || width === 0) return;
+    const dynamicHeight = plotOptions.height ?? Math.round(width * aspectRatio);
+    const opts: Plot.PlotOptions = {
+      ...plotOptions,
+      width,
+      height: dynamicHeight,
+    };
+    const plot = Plot.plot(opts);
     plot.setAttribute("role", "img");
     plot.setAttribute("aria-label", alt);
     plot.style.maxWidth = "100%";
@@ -41,13 +74,13 @@ export function PlotChart({ plotOptions, alt, caption, className }: PlotChartPro
     return () => {
       plot.remove();
     };
-  }, [plotOptions, alt, version]);
+  }, [plotOptions, alt, width, themeVersion, aspectRatio]);
 
   return (
     <figure className={className}>
-      <div ref={containerRef} className="w-full overflow-x-auto" />
+      <div ref={containerRef} className="w-full" />
       {caption && (
-        <figcaption className="mt-3 text-xs leading-relaxed text-[color:var(--color-fg-muted)]">
+        <figcaption className="mt-3 px-6 text-xs leading-relaxed text-[color:var(--color-fg-muted)] sm:px-0">
           {caption}
         </figcaption>
       )}

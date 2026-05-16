@@ -43,8 +43,8 @@ export function Chapter3TrackRecord() {
     <Chapter num={3} id="cap-3" title={chapterContent.c3.title} opening={chapterContent.c3.opening}>
       <div className="mx-auto max-w-[1100px] px-6">
         <PlotChart
-          alt="Confronto TFR osservato 1999-2024, proiezione ISTAT 2024 con banda 90% confidenza, scenario UN Medium 2024-2080, trend lineare osservato 2014-2024 esteso."
-          caption="Banda grigio-blu: intervallo di confidenza ISTAT al 90%. ISTAT mediano e UN Medium convergono entrambi verso un recupero del TFR. Il trend lineare osservato (tratteggiato grigio) e il limite inferiore al 90% ISTAT (bordo basso della banda) si collocano molto più in basso."
+          alt="Confronto TFT osservato 1999-2024, proiezione ISTAT 2024 con banda 90% confidenza, scenario UN Medium 2024-2080, trend lineare osservato 2014-2024 esteso."
+          caption="Banda grigio-blu: intervallo di confidenza ISTAT al 90%. ISTAT mediano e UN Medium convergono entrambi verso un recupero del TFT. Il trend lineare osservato (tratteggiato grigio) e il limite inferiore al 90% ISTAT (bordo basso della banda) si collocano molto più in basso."
           plotOptions={{
             width: 1060,
             height: 480,
@@ -53,7 +53,7 @@ export function Chapter3TrackRecord() {
             marginBottom: 40,
             marginLeft: 50,
             y: {
-              label: "TFR (figli per donna)",
+              label: "TFT (figli per donna)",
               grid: true,
               domain: [0.9, 1.7],
               tickFormat: (d: number) => formatItalian(d, 2),

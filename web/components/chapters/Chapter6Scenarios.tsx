@@ -116,7 +116,7 @@ export function Chapter6Scenarios() {
             marginBottom: 40,
             marginLeft: 50,
             y: {
-              label: "TFR",
+              label: "TFT",
               grid: true,
               domain: [0.9, 2.0],
               tickFormat: (d: number) => formatItalian(d, 2),

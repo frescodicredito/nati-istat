@@ -21,12 +21,12 @@ export interface DatasetWrapper<T> {
   data: T;
 }
 
-export interface TFRPoint {
+export interface TFTPoint {
   year: number;
   tfr: number;
 }
 
-export interface TFRByCitizenshipPoint {
+export interface TFTByCitizenshipPoint {
   year: number;
   citizenship: "italiane" | "straniere";
   tfr: number;
@@ -54,12 +54,12 @@ export interface UNWPPPoint {
 }
 
 export interface ScenariosComparison {
-  historical: TFRPoint[];
+  historical: TFTPoint[];
   istat_mediano: { year: number; value: number }[];
   istat_lower_50: { year: number; value: number }[];
   istat_upper_50: { year: number; value: number }[];
   istat_lower_90: { year: number; value: number }[];
   istat_upper_90: { year: number; value: number }[];
   un_medium?: { year: number; value: number }[];
-  no_recovery: TFRPoint[];
+  no_recovery: TFTPoint[];
 }

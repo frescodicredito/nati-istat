@@ -3,15 +3,15 @@ import Link from "next/link";
 const FILES = [
   {
     name: "tfr_historical.json",
-    description: "TFR Italia 1999-2024, dato osservato annuale",
+    description: "TFT Italia 1999-2024, dato osservato annuale",
   },
   {
     name: "tfr_by_citizenship.json",
-    description: "TFR per cittadinanza italiana/straniera 1999-2024",
+    description: "TFT per cittadinanza italiana/straniera 1999-2024",
   },
   {
     name: "projection_2024.json",
-    description: "Proiezione ISTAT 2024, TFR per scenario 2024-2080 (7 scenari)",
+    description: "Proiezione ISTAT 2024, TFT per scenario 2024-2080 (7 scenari)",
   },
   {
     name: "scenarios_comparison.json",

@@ -87,7 +87,7 @@ export function Chapter1Starting() {
       </div>
       <div className="mx-auto mt-12 max-w-[680px] px-6 text-base leading-relaxed">
         <p>
-          Il TFR italiano scende dalla soglia di rimpiazzo generazionale (2,1)
+          Il TFT italiano scende dalla soglia di rimpiazzo generazionale (2,1)
           intorno al 1976 e non ci ritorna più. La discesa dura trent'anni, dal
           1965 al 1995, riflettendo cambiamenti culturali (modelli familiari,
           ingresso femminile nel mercato del lavoro, posticipo dell'età del

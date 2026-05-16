@@ -16,14 +16,14 @@ import type {
   DatasetWrapper,
   ProjectionPoint,
   ScenariosComparison,
-  TFRByCitizenshipPoint,
-  TFRPoint,
+  TFTByCitizenshipPoint,
+  TFTPoint,
   UNWPPPoint,
 } from "./types";
 
-export const tfrHistorical = tfrHistoricalRaw as unknown as DatasetWrapper<TFRPoint[]>;
+export const tfrHistorical = tfrHistoricalRaw as unknown as DatasetWrapper<TFTPoint[]>;
 export const tfrCitizenship = birthsCitizenshipRaw as unknown as DatasetWrapper<
-  TFRByCitizenshipPoint[]
+  TFTByCitizenshipPoint[]
 >;
 export const projection2024 = projection2024Raw as unknown as DatasetWrapper<ProjectionPoint[]>;
 export const scenarios = scenariosRaw as unknown as DatasetWrapper<ScenariosComparison>;

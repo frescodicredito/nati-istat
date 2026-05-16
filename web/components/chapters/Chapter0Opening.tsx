@@ -32,7 +32,7 @@ export function Chapter0Opening() {
       <div className="mt-12">
         <div className="mx-auto max-w-[960px] px-6">
           <PlotChart
-            alt="Replica grafico ISTAT: TFR osservato 1999-2024 in rosso, proiezione mediana 2024 in blu."
+            alt="Replica grafico ISTAT: TFT osservato 1999-2024 in rosso, proiezione mediana 2024 in blu."
             caption={
               <>
                 Fonte: ISTAT DCIS_FECONDITA1 (osservato) + 165_889_DF_DCIS_PREVDEM1_3
@@ -70,7 +70,7 @@ export function Chapter0Opening() {
                 Plot.text([{ x: 2002, y: 1.18 }], {
                   x: "x",
                   y: "y",
-                  text: ["TFR 2024 = 1,18"],
+                  text: ["TFT 2024 = 1,18"],
                   dy: -6,
                   fontFamily: "var(--font-mono)",
                   fontSize: 10,

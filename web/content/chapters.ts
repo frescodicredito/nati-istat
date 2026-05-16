@@ -7,7 +7,7 @@ export const chapterContent = {
   c0: {
     title: "Il grafico di proiezione ISTAT 2024",
     opening:
-      "ISTAT ha pubblicato a settembre 2024 le previsioni della popolazione residente di lungo periodo. Il tasso di fecondità totale, in caduta dal 2010, è proiettato in graduale recupero fino al 2080. È la curva intorno a cui si costruiscono le previsioni economiche italiane.",
+      "ISTAT ha pubblicato a settembre 2024 le previsioni della popolazione residente di lungo periodo. Il tasso di fecondità totale (TFT — figli per donna), in caduta dal 2010, è proiettato in graduale recupero fino al 2080. È la curva intorno a cui si costruiscono le previsioni economiche italiane.",
   },
   c1: {
     title: "Tasso di fecondità totale, Italia 1952-2024",
@@ -17,12 +17,12 @@ export const chapterContent = {
   c2: {
     title: "Scomposizione: italiane e straniere",
     opening:
-      "Il TFR delle donne straniere residenti in Italia è strutturalmente più alto di quello delle italiane. Quando la quota di straniere in età fertile cresce, il TFR aggregato sale, anche senza che nulla cambi nei comportamenti di nessuno dei due gruppi.",
+      "Il TFT delle donne straniere residenti in Italia è strutturalmente più alto di quello delle italiane. Quando la quota di straniere in età fertile cresce, il TFT aggregato sale, anche senza che nulla cambi nei comportamenti di nessuno dei due gruppi.",
   },
   c3: {
     title: "La proiezione 2024 confrontata con osservato e benchmark",
     opening:
-      "La release 2024 di ISTAT proietta un recupero del TFR fino a 1,46 nel 2080. Le Nazioni Unite, nello scenario Medium per l'Italia, arrivano a 1,43. Entrambe le proiezioni si discostano progressivamente dal trend osservato negli ultimi dieci anni.",
+      "La release 2024 di ISTAT proietta un recupero del TFT fino a 1,46 nel 2080. Le Nazioni Unite, nello scenario Medium per l'Italia, arrivano a 1,43. Entrambe le proiezioni si discostano progressivamente dal trend osservato negli ultimi dieci anni.",
   },
   c4: {
     title: "Le bande di incertezza della proiezione ISTAT",
@@ -32,11 +32,11 @@ export const chapterContent = {
   c5: {
     title: "Le previsioni economiche basate su queste proiezioni",
     opening:
-      "Spesa pensionistica su PIL al 2050, indice di dipendenza, forza lavoro. Tutte stime che dipendono dal TFR proiettato. Una differenza apparentemente piccola sul TFR si traduce in milioni di lavoratori in più o in meno a 30-40 anni di distanza.",
+      "Spesa pensionistica su PIL al 2050, indice di dipendenza, forza lavoro. Tutte stime che dipendono dal TFT proiettato. Una differenza apparentemente piccola sul TFT si traduce in milioni di lavoratori in più o in meno a 30-40 anni di distanza.",
   },
   c6: {
     title: "Scenari alternativi a confronto",
     opening:
-      "Quattro traiettorie nello stesso grafico: il dato osservato 1952-2024, lo scenario ISTAT mediano, lo scenario UN Medium come benchmark internazionale, e un modello no-recovery (TFR costante al livello 2024). Le distanze al 2080 quantificano il range di incertezza.",
+      "Quattro traiettorie nello stesso grafico: il dato osservato 1952-2024, lo scenario ISTAT mediano, lo scenario UN Medium come benchmark internazionale, e un modello no-recovery (TFT costante al livello 2024). Le distanze al 2080 quantificano il range di incertezza.",
   },
 } as const;

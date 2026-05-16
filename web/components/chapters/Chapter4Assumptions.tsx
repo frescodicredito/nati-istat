@@ -47,7 +47,7 @@ export function Chapter4Assumptions() {
             marginBottom: 40,
             marginLeft: 50,
             y: {
-              label: "TFR",
+              label: "TFT",
               grid: true,
               domain: [0.9, 2.0],
               tickFormat: (d: number) => formatItalian(d, 2),
@@ -95,7 +95,7 @@ export function Chapter4Assumptions() {
         <p>Tre le assunzioni di modello della release ISTAT 2024:</p>
         <ul className="mt-4 ml-6 list-disc space-y-2">
           <li>
-            <strong>Convergenza al target europeo</strong>: il TFR italiano
+            <strong>Convergenza al target europeo</strong>: il TFT italiano
             converge gradualmente verso un livello compatibile con altri paesi
             EU a bassa fecondità (intorno a 1,4-1,5).
           </li>
@@ -106,7 +106,7 @@ export function Chapter4Assumptions() {
           <li>
             <strong>Componente straniere stabile o crescente</strong>: la quota
             di donne in età fertile straniere resta significativa e sostiene
-            il TFR aggregato.
+            il TFT aggregato.
           </li>
         </ul>
         <p>

@@ -8,14 +8,14 @@ export function Chapter5Cascade() {
         <p>
           La proiezione del tasso di fecondità entra in catena in ogni
           previsione economica di lungo periodo. La popolazione in età
-          lavorativa al 2050-2080 dipende dai TFR del decennio in corso più
+          lavorativa al 2050-2080 dipende dai TFT del decennio in corso più
           dalla mortalità e dai flussi migratori. Da quella popolazione
           discendono indice di dipendenza, spesa pensionistica sul PIL,
           equilibrio del sistema sanitario.
         </p>
         <p>
           Un esempio concreto: se al posto della proiezione ISTAT mediana
-          (TFR 2080 ≈ 1,46) si utilizzasse una traiettoria coerente con il
+          (TFT 2080 ≈ 1,46) si utilizzasse una traiettoria coerente con il
           trend osservato 2014-2024 (lower_90 ≈ 1,12), la stima di donne in
           età fertile al 2050 sarebbe inferiore del 7-12% rispetto allo
           scenario ufficiale. L'effetto si propaga in modo non-lineare nei

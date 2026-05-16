@@ -78,7 +78,11 @@ export function PlotChart({
 
   return (
     <figure className={className}>
-      <div ref={containerRef} className="w-full" />
+      <div
+        ref={containerRef}
+        className="w-full"
+        style={{ aspectRatio: `1 / ${aspectRatio}` }}
+      />
       {caption && (
         <figcaption className="mt-3 px-6 text-xs leading-relaxed text-[color:var(--color-fg-muted)] sm:px-0">
           {caption}

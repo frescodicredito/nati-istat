@@ -10,17 +10,17 @@ import type { AuditTrail } from "@/lib/types";
 
 const DATASETS: { title: string; audit: AuditTrail; anchor: string }[] = [
   {
-    title: "D1 — TFR Italia 1999-2024",
+    title: "D1 — TFT Italia 1999-2024",
     audit: tfrHistorical.audit,
     anchor: "datapoint-tfr",
   },
   {
-    title: "D3 — TFR per cittadinanza italiane vs straniere",
+    title: "D3 — TFT per cittadinanza italiane vs straniere",
     audit: tfrCitizenship.audit,
     anchor: "datapoint-citizenship",
   },
   {
-    title: "D9 — Proiezioni ISTAT 2024 (TFR scenari 2024-2080)",
+    title: "D9 — Proiezioni ISTAT 2024 (TFT scenari 2024-2080)",
     audit: projection2024.audit,
     anchor: "datapoint-projection",
   },
@@ -113,12 +113,12 @@ export default function MetodologiaPage() {
           filtro CITIZENSHIP=ITL/FRG, mapping codici → label italiani.
         </li>
         <li>
-          <strong>normalize_projection_2024</strong> — filtro DATA_TYPE=TFR
+          <strong>normalize_projection_2024</strong> — filtro DATA_TYPE=TFT
           su 165_889_DF_DCIS_PREVDEM1_3, mapping scenari (PROJMED →
           &quot;mediano&quot;, PROJLOW90 → &quot;lower_90&quot;, ecc.).
         </li>
         <li>
-          <strong>build_no_recovery_scenario</strong> — proietta TFR costante
+          <strong>build_no_recovery_scenario</strong> — proietta TFT costante
           al livello dell&apos;ultimo anno osservato (1,18 per il 2024) fino
           al 2080.
         </li>
@@ -131,7 +131,7 @@ export default function MetodologiaPage() {
       <h2>Validazione automatica (CI-enforced)</h2>
       <p>
         Ogni build CI esegue una suite di test che validano i JSON
-        processati: TFR sempre in <code>[0,5; 3,0]</code>, completezza anni
+        processati: TFT sempre in <code>[0,5; 3,0]</code>, completezza anni
         senza buchi, presenza dei sette scenari ISTAT, monotonia{" "}
         <code>lower_90 ≤ mediano ≤ upper_90</code> per ciascun anno, audit
         trail completo. Una violazione blocca il deploy.
@@ -156,7 +156,7 @@ uv run python build.py                     # Build completa con refresh dati`}</
       <h2>Limiti e caveat espliciti</h2>
       <ul className="mt-4 ml-6 list-disc space-y-2">
         <li>
-          <strong>Range temporale TFR storico</strong>: 1999-2024. La serie
+          <strong>Range temporale TFT storico</strong>: 1999-2024. La serie
           ISTAT pre-1999 richiede un dataset archive separato e sarà integrata
           in iterazione successiva.
         </li>
@@ -168,7 +168,7 @@ uv run python build.py                     # Build completa con refresh dati`}</
           report PDF/XLS pubblicati.
         </li>
         <li>
-          <strong>Il TFR è un indicatore di periodo</strong>, soffre di tempo
+          <strong>Il TFT è un indicatore di periodo</strong>, soffre di tempo
           effects (postponement). Per analisi cohort-level (completed
           fertility) servirebbero dati Human Fertility Database, non ancora
           integrati.

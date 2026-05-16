@@ -47,7 +47,15 @@ export default function RootLayout({
     <html
       lang="it"
       className={`${serif.variable} ${sans.variable} ${mono.variable}`}
+      suppressHydrationWarning
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');if(t==='dark')document.documentElement.classList.add('dark')}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body>
         <ReadingProgress />
         <TopNav />

@@ -5,6 +5,7 @@ import * as Plot from "@observablehq/plot";
 import { PlotChart } from "@/components/charts/PlotChart";
 import { chapterContent } from "@/content/chapters";
 import { projection2024, tfrHistorical } from "@/lib/data";
+import { formatItalian, formatYear } from "@/lib/format";
 import { colors } from "@/lib/theme";
 
 export function Chapter0Opening() {
@@ -48,11 +49,12 @@ export function Chapter0Opening() {
               y: {
                 label: "Figli per donna",
                 grid: true,
-                domain: [1.15, 1.5],
+                domain: [1.1, 1.55],
+                tickFormat: (d: number) => formatItalian(d, 2),
               },
               x: {
                 label: null,
-                tickFormat: (d: number) => String(d),
+                tickFormat: formatYear,
               },
               color: {
                 domain: ["Osservato", "Proiezione ISTAT 2024"],
@@ -68,11 +70,12 @@ export function Chapter0Opening() {
                 Plot.text([{ x: 2002, y: 1.18 }], {
                   x: "x",
                   y: "y",
-                  text: ["1,18"],
-                  dy: -8,
+                  text: ["TFR 2024 = 1,18"],
+                  dy: -6,
                   fontFamily: "var(--font-mono)",
                   fontSize: 10,
-                  fill: colors.fgSubtle,
+                  fill: colors.fgMuted,
+                  textAnchor: "start",
                 }),
                 Plot.lineY(data, {
                   x: "year",

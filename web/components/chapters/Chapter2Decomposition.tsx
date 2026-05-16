@@ -6,6 +6,7 @@ import { Chapter } from "./Chapter";
 import { PlotChart } from "@/components/charts/PlotChart";
 import { chapterContent } from "@/content/chapters";
 import { tfrCitizenship } from "@/lib/data";
+import { formatItalian, formatYear } from "@/lib/format";
 import { colors } from "@/lib/theme";
 
 export function Chapter2Decomposition() {
@@ -22,8 +23,13 @@ export function Chapter2Decomposition() {
             marginRight: 20,
             marginBottom: 40,
             marginLeft: 50,
-            y: { label: "Figli per donna", grid: true, domain: [1.0, 2.8] },
-            x: { label: null, tickFormat: (d: number) => String(d) },
+            y: {
+              label: "Figli per donna",
+              grid: true,
+              domain: [1.0, 2.9],
+              tickFormat: (d: number) => formatItalian(d, 1),
+            },
+            x: { label: null, tickFormat: formatYear },
             color: {
               domain: ["italiane", "straniere"],
               range: [colors.projectionMediano, colors.scenarioAlt],

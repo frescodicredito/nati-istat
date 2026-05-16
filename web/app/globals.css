@@ -1,10 +1,14 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-serif: var(--font-serif), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-sans), system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-mono), ui-monospace, "SF Mono", Menlo, monospace;
+}
 
+:root {
   --color-bg: #ffffff;
   --color-fg: #1a1a1a;
   --color-fg-muted: #5a5a5a;
@@ -18,6 +22,20 @@
   --color-scenario-alt: #45bccc;
 }
 
+.dark {
+  --color-bg: #0e1116;
+  --color-fg: #e8e6e3;
+  --color-fg-muted: #a8a59f;
+  --color-fg-subtle: #6e6c67;
+  --color-border: #232830;
+  --color-surface: #161a21;
+
+  --color-historical: #e8623d;
+  --color-projection: #6fa9e8;
+  --color-projection-band: #2c4263;
+  --color-scenario-alt: #5de0e8;
+}
+
 @layer base {
   html {
     font-family: var(--font-sans);
@@ -25,11 +43,33 @@
     background: var(--color-bg);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
   }
 
   body {
     font-size: 17px;
     line-height: 1.6;
+    transition: background 200ms ease, color 200ms ease;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--color-historical);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 
   h1, h2, h3, h4 {
@@ -80,4 +120,12 @@
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
   }
+
+  /* Plot SVG charts: forza colore tutto-tema */
+  figure svg text { fill: var(--color-fg-muted); }
+  figure svg [aria-label="x-axis tick label"] text,
+  figure svg [aria-label="y-axis tick label"] text { fill: var(--color-fg-subtle); }
+  figure svg [aria-label="x-axis"] line,
+  figure svg [aria-label="y-axis"] line { stroke: var(--color-border); }
+  figure svg [aria-label$="-grid"] line { stroke: var(--color-border); opacity: 0.55; }
 }

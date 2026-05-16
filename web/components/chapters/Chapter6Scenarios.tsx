@@ -7,6 +7,7 @@ import { Chapter } from "./Chapter";
 import { PlotChart } from "@/components/charts/PlotChart";
 import { chapterContent } from "@/content/chapters";
 import { scenarios } from "@/lib/data";
+import { formatItalian, formatYear } from "@/lib/format";
 import { colors } from "@/lib/theme";
 
 type ScenarioKey =
@@ -114,8 +115,13 @@ export function Chapter6Scenarios() {
             marginRight: 30,
             marginBottom: 40,
             marginLeft: 50,
-            y: { label: "TFR", grid: true, domain: [0.9, 2.0] },
-            x: { label: null, tickFormat: (d: number) => String(d) },
+            y: {
+              label: "TFR",
+              grid: true,
+              domain: [0.9, 2.0],
+              tickFormat: (d: number) => formatItalian(d, 2),
+            },
+            x: { label: null, tickFormat: formatYear },
             color: {
               domain: [
                 "Osservato",

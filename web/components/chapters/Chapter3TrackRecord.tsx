@@ -6,6 +6,7 @@ import { Chapter } from "./Chapter";
 import { PlotChart } from "@/components/charts/PlotChart";
 import { chapterContent } from "@/content/chapters";
 import { projection2024, tfrHistorical, unWpp } from "@/lib/data";
+import { formatItalian, formatYear } from "@/lib/format";
 import { colors } from "@/lib/theme";
 
 export function Chapter3TrackRecord() {
@@ -51,8 +52,13 @@ export function Chapter3TrackRecord() {
             marginRight: 30,
             marginBottom: 40,
             marginLeft: 50,
-            y: { label: "TFR (figli per donna)", grid: true, domain: [0.9, 1.7] },
-            x: { label: null, tickFormat: (d: number) => String(d) },
+            y: {
+              label: "TFR (figli per donna)",
+              grid: true,
+              domain: [0.9, 1.7],
+              tickFormat: (d: number) => formatItalian(d, 2),
+            },
+            x: { label: null, tickFormat: formatYear },
             marks: [
               Plot.areaY(band, {
                 x: "year",

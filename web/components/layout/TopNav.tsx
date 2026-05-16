@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { ThemeToggle } from "./ThemeToggle";
+
 const CHAPTERS = [
   { num: 1, anchor: "#cap-1", label: "Dato di partenza" },
   { num: 2, anchor: "#cap-2", label: "Ripresa 2003-2010" },
@@ -11,12 +13,12 @@ const CHAPTERS = [
 
 export function TopNav() {
   return (
-    <nav className="sticky top-0 z-50 border-b border-[color:var(--color-border)] bg-white/85 backdrop-blur">
-      <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-4 px-6 py-3 text-sm">
+    <nav className="sticky top-0 z-50 border-b border-[color:var(--color-border)] bg-[color:var(--color-bg)]/85 backdrop-blur supports-[backdrop-filter]:bg-[color:var(--color-bg)]/70">
+      <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-3 px-4 py-3 text-sm sm:px-6">
         <Link href="/" className="font-serif text-base font-semibold tracking-tight">
           nati-istat
         </Link>
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-1 lg:flex">
           {CHAPTERS.map((c) => (
             <a
               key={c.num}
@@ -27,19 +29,35 @@ export function TopNav() {
               {c.num}
             </a>
           ))}
-          <span className="mx-2 text-[color:var(--color-border)]">·</span>
+        </div>
+        <div className="flex items-center gap-1">
           <Link
             href="/metodologia"
-            className="px-2 py-1 text-[color:var(--color-fg-muted)] hover:text-[color:var(--color-fg)]"
+            className="hidden px-2 py-1 text-[color:var(--color-fg-muted)] transition-colors hover:text-[color:var(--color-fg)] sm:block"
           >
             Metodologia
           </Link>
           <Link
             href="/dati"
-            className="px-2 py-1 text-[color:var(--color-fg-muted)] hover:text-[color:var(--color-fg)]"
+            className="hidden px-2 py-1 text-[color:var(--color-fg-muted)] transition-colors hover:text-[color:var(--color-fg)] sm:block"
           >
             Dati
           </Link>
+          <Link
+            href="/metodologia"
+            className="px-2 py-1 text-[color:var(--color-fg-muted)] transition-colors hover:text-[color:var(--color-fg)] sm:hidden"
+            aria-label="Metodologia"
+          >
+            Met.
+          </Link>
+          <Link
+            href="/dati"
+            className="px-2 py-1 text-[color:var(--color-fg-muted)] transition-colors hover:text-[color:var(--color-fg)] sm:hidden"
+            aria-label="Dati"
+          >
+            Dati
+          </Link>
+          <ThemeToggle />
         </div>
       </div>
     </nav>

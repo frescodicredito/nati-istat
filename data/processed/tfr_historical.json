@@ -3,7 +3,7 @@
     "source": "ISTAT 25_944_DF_DCIS_ARCH_FEC_6",
     "source_url": "http://sdmx.istat.it/SDMXWS/rest/data/25_944_DF_DCIS_ARCH_FEC_6",
     "downloaded_at": "2026-05-16T00:00:00Z",
-    "pipeline_version": "9121af5",
+    "pipeline_version": "66dbf00",
     "transforms_applied": [
       "filter_italia_total",
       "normalize_tfr_dataframe"

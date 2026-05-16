@@ -1,0 +1,26 @@
+{
+  "PROJ_19NAASFR": {
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/PROJ_19NAASFR",
+    "release_year": 2019,
+    "sha256": "80bd0be2d4490a28a5996c334421ea5fd90f944291ca70265469636ce0fd8a13",
+    "size_bytes": 30850,
+    "downloaded_at": "2026-05-16T12:57:27.935149+00:00",
+    "rows": 6232
+  },
+  "PROJ_23NAASFR": {
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/PROJ_23NAASFR",
+    "release_year": 2023,
+    "sha256": "1a4d6bfca0c677e4f5602a5415c3f7e583058a7dd99ea9f6a55b04eaf51dc135",
+    "size_bytes": 29298,
+    "downloaded_at": "2026-05-16T12:57:30.895307+00:00",
+    "rows": 6004
+  },
+  "PROJ_25NAASFR": {
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/PROJ_25NAASFR",
+    "release_year": 2025,
+    "sha256": "9f67641ec40790c5624c6afecf1f55addc71a41c940b479668805d56255819b7",
+    "size_bytes": 13882,
+    "downloaded_at": "2026-05-16T12:57:33.522026+00:00",
+    "rows": 2888
+  }
+}

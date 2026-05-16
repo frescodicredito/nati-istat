@@ -20,9 +20,9 @@ export const chapterContent = {
       "Il TFT delle donne straniere residenti in Italia è strutturalmente più alto di quello delle italiane. Quando la quota di straniere in età fertile cresce, il TFT aggregato sale, anche senza che nulla cambi nei comportamenti di nessuno dei due gruppi.",
   },
   c3: {
-    title: "La proiezione 2024 confrontata con osservato e benchmark",
+    title: "Track record delle proiezioni: ogni release sovrastima",
     opening:
-      "La release 2024 di ISTAT proietta un recupero del TFT fino a 1,46 nel 2080. Le Nazioni Unite, nello scenario Medium per l'Italia, arrivano a 1,43. Entrambe le proiezioni si discostano progressivamente dal trend osservato negli ultimi dieci anni.",
+      "Sovrapponendo le tre release Eurostat di proiezione (2019, 2023, 2025) e la release ISTAT 2024 con il dato osservato, emerge un pattern: ogni release con sufficiente overlap temporale mostra bias positivo. La proiezione del TFT, in media, è sopra il dato realizzato.",
   },
   c4: {
     title: "Le bande di incertezza della proiezione ISTAT",

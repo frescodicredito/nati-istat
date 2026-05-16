@@ -1,0 +1,1202 @@
+{
+  "audit": {
+    "source": "Eurostat EUROPOP NAASFR releases 2019/2023/2025",
+    "source_url": "https://ec.europa.eu/eurostat/databrowser/explore/all/popul",
+    "downloaded_at": "2026-05-16T00:00:00Z",
+    "pipeline_version": "66dbf00",
+    "transforms_applied": [
+      "filter_total_baseline",
+      "concat_releases"
+    ],
+    "validation_passed": true,
+    "datapoint_count": 237,
+    "notes": "3 release storiche TFT Italia"
+  },
+  "data": [
+    {
+      "release_year": 2019,
+      "year": 2019,
+      "tft": 1.31095
+    },
+    {
+      "release_year": 2019,
+      "year": 2020,
+      "tft": 1.32558
+    },
+    {
+      "release_year": 2019,
+      "year": 2021,
+      "tft": 1.33047
+    },
+    {
+      "release_year": 2019,
+      "year": 2022,
+      "tft": 1.33528
+    },
+    {
+      "release_year": 2019,
+      "year": 2023,
+      "tft": 1.34001
+    },
+    {
+      "release_year": 2019,
+      "year": 2024,
+      "tft": 1.34468
+    },
+    {
+      "release_year": 2019,
+      "year": 2025,
+      "tft": 1.34928
+    },
+    {
+      "release_year": 2019,
+      "year": 2026,
+      "tft": 1.35381
+    },
+    {
+      "release_year": 2019,
+      "year": 2027,
+      "tft": 1.35827
+    },
+    {
+      "release_year": 2019,
+      "year": 2028,
+      "tft": 1.36268
+    },
+    {
+      "release_year": 2019,
+      "year": 2029,
+      "tft": 1.36702
+    },
+    {
+      "release_year": 2019,
+      "year": 2030,
+      "tft": 1.37131
+    },
+    {
+      "release_year": 2019,
+      "year": 2031,
+      "tft": 1.37554
+    },
+    {
+      "release_year": 2019,
+      "year": 2032,
+      "tft": 1.37971
+    },
+    {
+      "release_year": 2019,
+      "year": 2033,
+      "tft": 1.38384
+    },
+    {
+      "release_year": 2019,
+      "year": 2034,
+      "tft": 1.38791
+    },
+    {
+      "release_year": 2019,
+      "year": 2035,
+      "tft": 1.39194
+    },
+    {
+      "release_year": 2019,
+      "year": 2036,
+      "tft": 1.39592
+    },
+    {
+      "release_year": 2019,
+      "year": 2037,
+      "tft": 1.39986
+    },
+    {
+      "release_year": 2019,
+      "year": 2038,
+      "tft": 1.40376
+    },
+    {
+      "release_year": 2019,
+      "year": 2039,
+      "tft": 1.40761
+    },
+    {
+      "release_year": 2019,
+      "year": 2040,
+      "tft": 1.41143
+    },
+    {
+      "release_year": 2019,
+      "year": 2041,
+      "tft": 1.41522
+    },
+    {
+      "release_year": 2019,
+      "year": 2042,
+      "tft": 1.41897
+    },
+    {
+      "release_year": 2019,
+      "year": 2043,
+      "tft": 1.42269
+    },
+    {
+      "release_year": 2019,
+      "year": 2044,
+      "tft": 1.42638
+    },
+    {
+      "release_year": 2019,
+      "year": 2045,
+      "tft": 1.43003
+    },
+    {
+      "release_year": 2019,
+      "year": 2046,
+      "tft": 1.43367
+    },
+    {
+      "release_year": 2019,
+      "year": 2047,
+      "tft": 1.43727
+    },
+    {
+      "release_year": 2019,
+      "year": 2048,
+      "tft": 1.44086
+    },
+    {
+      "release_year": 2019,
+      "year": 2049,
+      "tft": 1.44442
+    },
+    {
+      "release_year": 2019,
+      "year": 2050,
+      "tft": 1.44796
+    },
+    {
+      "release_year": 2019,
+      "year": 2051,
+      "tft": 1.45149
+    },
+    {
+      "release_year": 2019,
+      "year": 2052,
+      "tft": 1.455
+    },
+    {
+      "release_year": 2019,
+      "year": 2053,
+      "tft": 1.45849
+    },
+    {
+      "release_year": 2019,
+      "year": 2054,
+      "tft": 1.46197
+    },
+    {
+      "release_year": 2019,
+      "year": 2055,
+      "tft": 1.46544
+    },
+    {
+      "release_year": 2019,
+      "year": 2056,
+      "tft": 1.4689
+    },
+    {
+      "release_year": 2019,
+      "year": 2057,
+      "tft": 1.47235
+    },
+    {
+      "release_year": 2019,
+      "year": 2058,
+      "tft": 1.47579
+    },
+    {
+      "release_year": 2019,
+      "year": 2059,
+      "tft": 1.47922
+    },
+    {
+      "release_year": 2019,
+      "year": 2060,
+      "tft": 1.48266
+    },
+    {
+      "release_year": 2019,
+      "year": 2061,
+      "tft": 1.48609
+    },
+    {
+      "release_year": 2019,
+      "year": 2062,
+      "tft": 1.48951
+    },
+    {
+      "release_year": 2019,
+      "year": 2063,
+      "tft": 1.49294
+    },
+    {
+      "release_year": 2019,
+      "year": 2064,
+      "tft": 1.49637
+    },
+    {
+      "release_year": 2019,
+      "year": 2065,
+      "tft": 1.4998
+    },
+    {
+      "release_year": 2019,
+      "year": 2066,
+      "tft": 1.50324
+    },
+    {
+      "release_year": 2019,
+      "year": 2067,
+      "tft": 1.50668
+    },
+    {
+      "release_year": 2019,
+      "year": 2068,
+      "tft": 1.51013
+    },
+    {
+      "release_year": 2019,
+      "year": 2069,
+      "tft": 1.51359
+    },
+    {
+      "release_year": 2019,
+      "year": 2070,
+      "tft": 1.51706
+    },
+    {
+      "release_year": 2019,
+      "year": 2071,
+      "tft": 1.52053
+    },
+    {
+      "release_year": 2019,
+      "year": 2072,
+      "tft": 1.52402
+    },
+    {
+      "release_year": 2019,
+      "year": 2073,
+      "tft": 1.52753
+    },
+    {
+      "release_year": 2019,
+      "year": 2074,
+      "tft": 1.53104
+    },
+    {
+      "release_year": 2019,
+      "year": 2075,
+      "tft": 1.53458
+    },
+    {
+      "release_year": 2019,
+      "year": 2076,
+      "tft": 1.53813
+    },
+    {
+      "release_year": 2019,
+      "year": 2077,
+      "tft": 1.5417
+    },
+    {
+      "release_year": 2019,
+      "year": 2078,
+      "tft": 1.54528
+    },
+    {
+      "release_year": 2019,
+      "year": 2079,
+      "tft": 1.54889
+    },
+    {
+      "release_year": 2019,
+      "year": 2080,
+      "tft": 1.55252
+    },
+    {
+      "release_year": 2019,
+      "year": 2081,
+      "tft": 1.55617
+    },
+    {
+      "release_year": 2019,
+      "year": 2082,
+      "tft": 1.55985
+    },
+    {
+      "release_year": 2019,
+      "year": 2083,
+      "tft": 1.56355
+    },
+    {
+      "release_year": 2019,
+      "year": 2084,
+      "tft": 1.56728
+    },
+    {
+      "release_year": 2019,
+      "year": 2085,
+      "tft": 1.57103
+    },
+    {
+      "release_year": 2019,
+      "year": 2086,
+      "tft": 1.57482
+    },
+    {
+      "release_year": 2019,
+      "year": 2087,
+      "tft": 1.57863
+    },
+    {
+      "release_year": 2019,
+      "year": 2088,
+      "tft": 1.58247
+    },
+    {
+      "release_year": 2019,
+      "year": 2089,
+      "tft": 1.58634
+    },
+    {
+      "release_year": 2019,
+      "year": 2090,
+      "tft": 1.59025
+    },
+    {
+      "release_year": 2019,
+      "year": 2091,
+      "tft": 1.59418
+    },
+    {
+      "release_year": 2019,
+      "year": 2092,
+      "tft": 1.59816
+    },
+    {
+      "release_year": 2019,
+      "year": 2093,
+      "tft": 1.60216
+    },
+    {
+      "release_year": 2019,
+      "year": 2094,
+      "tft": 1.60621
+    },
+    {
+      "release_year": 2019,
+      "year": 2095,
+      "tft": 1.61029
+    },
+    {
+      "release_year": 2019,
+      "year": 2096,
+      "tft": 1.6144
+    },
+    {
+      "release_year": 2019,
+      "year": 2097,
+      "tft": 1.61856
+    },
+    {
+      "release_year": 2019,
+      "year": 2098,
+      "tft": 1.62276
+    },
+    {
+      "release_year": 2019,
+      "year": 2099,
+      "tft": 1.62699
+    },
+    {
+      "release_year": 2019,
+      "year": 2100,
+      "tft": 1.63127
+    },
+    {
+      "release_year": 2023,
+      "year": 2022,
+      "tft": 1.23963
+    },
+    {
+      "release_year": 2023,
+      "year": 2023,
+      "tft": 1.24493
+    },
+    {
+      "release_year": 2023,
+      "year": 2024,
+      "tft": 1.25018
+    },
+    {
+      "release_year": 2023,
+      "year": 2025,
+      "tft": 1.25562
+    },
+    {
+      "release_year": 2023,
+      "year": 2026,
+      "tft": 1.26098
+    },
+    {
+      "release_year": 2023,
+      "year": 2027,
+      "tft": 1.26627
+    },
+    {
+      "release_year": 2023,
+      "year": 2028,
+      "tft": 1.27149
+    },
+    {
+      "release_year": 2023,
+      "year": 2029,
+      "tft": 1.27665
+    },
+    {
+      "release_year": 2023,
+      "year": 2030,
+      "tft": 1.28174
+    },
+    {
+      "release_year": 2023,
+      "year": 2031,
+      "tft": 1.28676
+    },
+    {
+      "release_year": 2023,
+      "year": 2032,
+      "tft": 1.29173
+    },
+    {
+      "release_year": 2023,
+      "year": 2033,
+      "tft": 1.29663
+    },
+    {
+      "release_year": 2023,
+      "year": 2034,
+      "tft": 1.30148
+    },
+    {
+      "release_year": 2023,
+      "year": 2035,
+      "tft": 1.30627
+    },
+    {
+      "release_year": 2023,
+      "year": 2036,
+      "tft": 1.311
+    },
+    {
+      "release_year": 2023,
+      "year": 2037,
+      "tft": 1.31568
+    },
+    {
+      "release_year": 2023,
+      "year": 2038,
+      "tft": 1.3203
+    },
+    {
+      "release_year": 2023,
+      "year": 2039,
+      "tft": 1.32488
+    },
+    {
+      "release_year": 2023,
+      "year": 2040,
+      "tft": 1.3294
+    },
+    {
+      "release_year": 2023,
+      "year": 2041,
+      "tft": 1.33388
+    },
+    {
+      "release_year": 2023,
+      "year": 2042,
+      "tft": 1.33831
+    },
+    {
+      "release_year": 2023,
+      "year": 2043,
+      "tft": 1.3427
+    },
+    {
+      "release_year": 2023,
+      "year": 2044,
+      "tft": 1.34704
+    },
+    {
+      "release_year": 2023,
+      "year": 2045,
+      "tft": 1.35134
+    },
+    {
+      "release_year": 2023,
+      "year": 2046,
+      "tft": 1.3556
+    },
+    {
+      "release_year": 2023,
+      "year": 2047,
+      "tft": 1.35982
+    },
+    {
+      "release_year": 2023,
+      "year": 2048,
+      "tft": 1.364
+    },
+    {
+      "release_year": 2023,
+      "year": 2049,
+      "tft": 1.36814
+    },
+    {
+      "release_year": 2023,
+      "year": 2050,
+      "tft": 1.37225
+    },
+    {
+      "release_year": 2023,
+      "year": 2051,
+      "tft": 1.37633
+    },
+    {
+      "release_year": 2023,
+      "year": 2052,
+      "tft": 1.38037
+    },
+    {
+      "release_year": 2023,
+      "year": 2053,
+      "tft": 1.38438
+    },
+    {
+      "release_year": 2023,
+      "year": 2054,
+      "tft": 1.38835
+    },
+    {
+      "release_year": 2023,
+      "year": 2055,
+      "tft": 1.3923
+    },
+    {
+      "release_year": 2023,
+      "year": 2056,
+      "tft": 1.39622
+    },
+    {
+      "release_year": 2023,
+      "year": 2057,
+      "tft": 1.40012
+    },
+    {
+      "release_year": 2023,
+      "year": 2058,
+      "tft": 1.40399
+    },
+    {
+      "release_year": 2023,
+      "year": 2059,
+      "tft": 1.40783
+    },
+    {
+      "release_year": 2023,
+      "year": 2060,
+      "tft": 1.41165
+    },
+    {
+      "release_year": 2023,
+      "year": 2061,
+      "tft": 1.41545
+    },
+    {
+      "release_year": 2023,
+      "year": 2062,
+      "tft": 1.41923
+    },
+    {
+      "release_year": 2023,
+      "year": 2063,
+      "tft": 1.42298
+    },
+    {
+      "release_year": 2023,
+      "year": 2064,
+      "tft": 1.42672
+    },
+    {
+      "release_year": 2023,
+      "year": 2065,
+      "tft": 1.43044
+    },
+    {
+      "release_year": 2023,
+      "year": 2066,
+      "tft": 1.43414
+    },
+    {
+      "release_year": 2023,
+      "year": 2067,
+      "tft": 1.43783
+    },
+    {
+      "release_year": 2023,
+      "year": 2068,
+      "tft": 1.4415
+    },
+    {
+      "release_year": 2023,
+      "year": 2069,
+      "tft": 1.44516
+    },
+    {
+      "release_year": 2023,
+      "year": 2070,
+      "tft": 1.44881
+    },
+    {
+      "release_year": 2023,
+      "year": 2071,
+      "tft": 1.45244
+    },
+    {
+      "release_year": 2023,
+      "year": 2072,
+      "tft": 1.45607
+    },
+    {
+      "release_year": 2023,
+      "year": 2073,
+      "tft": 1.45968
+    },
+    {
+      "release_year": 2023,
+      "year": 2074,
+      "tft": 1.46329
+    },
+    {
+      "release_year": 2023,
+      "year": 2075,
+      "tft": 1.46689
+    },
+    {
+      "release_year": 2023,
+      "year": 2076,
+      "tft": 1.47048
+    },
+    {
+      "release_year": 2023,
+      "year": 2077,
+      "tft": 1.47406
+    },
+    {
+      "release_year": 2023,
+      "year": 2078,
+      "tft": 1.47764
+    },
+    {
+      "release_year": 2023,
+      "year": 2079,
+      "tft": 1.48122
+    },
+    {
+      "release_year": 2023,
+      "year": 2080,
+      "tft": 1.48479
+    },
+    {
+      "release_year": 2023,
+      "year": 2081,
+      "tft": 1.48837
+    },
+    {
+      "release_year": 2023,
+      "year": 2082,
+      "tft": 1.49193
+    },
+    {
+      "release_year": 2023,
+      "year": 2083,
+      "tft": 1.4955
+    },
+    {
+      "release_year": 2023,
+      "year": 2084,
+      "tft": 1.49907
+    },
+    {
+      "release_year": 2023,
+      "year": 2085,
+      "tft": 1.50264
+    },
+    {
+      "release_year": 2023,
+      "year": 2086,
+      "tft": 1.50622
+    },
+    {
+      "release_year": 2023,
+      "year": 2087,
+      "tft": 1.50979
+    },
+    {
+      "release_year": 2023,
+      "year": 2088,
+      "tft": 1.51337
+    },
+    {
+      "release_year": 2023,
+      "year": 2089,
+      "tft": 1.51695
+    },
+    {
+      "release_year": 2023,
+      "year": 2090,
+      "tft": 1.52054
+    },
+    {
+      "release_year": 2023,
+      "year": 2091,
+      "tft": 1.52414
+    },
+    {
+      "release_year": 2023,
+      "year": 2092,
+      "tft": 1.52774
+    },
+    {
+      "release_year": 2023,
+      "year": 2093,
+      "tft": 1.53135
+    },
+    {
+      "release_year": 2023,
+      "year": 2094,
+      "tft": 1.53497
+    },
+    {
+      "release_year": 2023,
+      "year": 2095,
+      "tft": 1.53859
+    },
+    {
+      "release_year": 2023,
+      "year": 2096,
+      "tft": 1.54223
+    },
+    {
+      "release_year": 2023,
+      "year": 2097,
+      "tft": 1.54587
+    },
+    {
+      "release_year": 2023,
+      "year": 2098,
+      "tft": 1.54953
+    },
+    {
+      "release_year": 2023,
+      "year": 2099,
+      "tft": 1.5532
+    },
+    {
+      "release_year": 2023,
+      "year": 2100,
+      "tft": 1.55688
+    },
+    {
+      "release_year": 2025,
+      "year": 2025,
+      "tft": 1.13794
+    },
+    {
+      "release_year": 2025,
+      "year": 2026,
+      "tft": 1.13529
+    },
+    {
+      "release_year": 2025,
+      "year": 2027,
+      "tft": 1.14651
+    },
+    {
+      "release_year": 2025,
+      "year": 2028,
+      "tft": 1.15776
+    },
+    {
+      "release_year": 2025,
+      "year": 2029,
+      "tft": 1.16903
+    },
+    {
+      "release_year": 2025,
+      "year": 2030,
+      "tft": 1.18024
+    },
+    {
+      "release_year": 2025,
+      "year": 2031,
+      "tft": 1.19147
+    },
+    {
+      "release_year": 2025,
+      "year": 2032,
+      "tft": 1.20272
+    },
+    {
+      "release_year": 2025,
+      "year": 2033,
+      "tft": 1.21398
+    },
+    {
+      "release_year": 2025,
+      "year": 2034,
+      "tft": 1.2252
+    },
+    {
+      "release_year": 2025,
+      "year": 2035,
+      "tft": 1.22874
+    },
+    {
+      "release_year": 2025,
+      "year": 2036,
+      "tft": 1.23235
+    },
+    {
+      "release_year": 2025,
+      "year": 2037,
+      "tft": 1.23593
+    },
+    {
+      "release_year": 2025,
+      "year": 2038,
+      "tft": 1.23951
+    },
+    {
+      "release_year": 2025,
+      "year": 2039,
+      "tft": 1.24309
+    },
+    {
+      "release_year": 2025,
+      "year": 2040,
+      "tft": 1.24666
+    },
+    {
+      "release_year": 2025,
+      "year": 2041,
+      "tft": 1.25024
+    },
+    {
+      "release_year": 2025,
+      "year": 2042,
+      "tft": 1.2538
+    },
+    {
+      "release_year": 2025,
+      "year": 2043,
+      "tft": 1.25739
+    },
+    {
+      "release_year": 2025,
+      "year": 2044,
+      "tft": 1.26096
+    },
+    {
+      "release_year": 2025,
+      "year": 2045,
+      "tft": 1.26451
+    },
+    {
+      "release_year": 2025,
+      "year": 2046,
+      "tft": 1.26813
+    },
+    {
+      "release_year": 2025,
+      "year": 2047,
+      "tft": 1.27169
+    },
+    {
+      "release_year": 2025,
+      "year": 2048,
+      "tft": 1.27527
+    },
+    {
+      "release_year": 2025,
+      "year": 2049,
+      "tft": 1.27884
+    },
+    {
+      "release_year": 2025,
+      "year": 2050,
+      "tft": 1.28244
+    },
+    {
+      "release_year": 2025,
+      "year": 2051,
+      "tft": 1.28596
+    },
+    {
+      "release_year": 2025,
+      "year": 2052,
+      "tft": 1.28956
+    },
+    {
+      "release_year": 2025,
+      "year": 2053,
+      "tft": 1.29318
+    },
+    {
+      "release_year": 2025,
+      "year": 2054,
+      "tft": 1.2967
+    },
+    {
+      "release_year": 2025,
+      "year": 2055,
+      "tft": 1.30032
+    },
+    {
+      "release_year": 2025,
+      "year": 2056,
+      "tft": 1.30386
+    },
+    {
+      "release_year": 2025,
+      "year": 2057,
+      "tft": 1.30744
+    },
+    {
+      "release_year": 2025,
+      "year": 2058,
+      "tft": 1.31105
+    },
+    {
+      "release_year": 2025,
+      "year": 2059,
+      "tft": 1.31458
+    },
+    {
+      "release_year": 2025,
+      "year": 2060,
+      "tft": 1.3182
+    },
+    {
+      "release_year": 2025,
+      "year": 2061,
+      "tft": 1.32176
+    },
+    {
+      "release_year": 2025,
+      "year": 2062,
+      "tft": 1.32532
+    },
+    {
+      "release_year": 2025,
+      "year": 2063,
+      "tft": 1.32889
+    },
+    {
+      "release_year": 2025,
+      "year": 2064,
+      "tft": 1.33247
+    },
+    {
+      "release_year": 2025,
+      "year": 2065,
+      "tft": 1.33606
+    },
+    {
+      "release_year": 2025,
+      "year": 2066,
+      "tft": 1.33967
+    },
+    {
+      "release_year": 2025,
+      "year": 2067,
+      "tft": 1.3432
+    },
+    {
+      "release_year": 2025,
+      "year": 2068,
+      "tft": 1.34679
+    },
+    {
+      "release_year": 2025,
+      "year": 2069,
+      "tft": 1.35034
+    },
+    {
+      "release_year": 2025,
+      "year": 2070,
+      "tft": 1.35394
+    },
+    {
+      "release_year": 2025,
+      "year": 2071,
+      "tft": 1.35754
+    },
+    {
+      "release_year": 2025,
+      "year": 2072,
+      "tft": 1.3611
+    },
+    {
+      "release_year": 2025,
+      "year": 2073,
+      "tft": 1.36468
+    },
+    {
+      "release_year": 2025,
+      "year": 2074,
+      "tft": 1.36825
+    },
+    {
+      "release_year": 2025,
+      "year": 2075,
+      "tft": 1.3718
+    },
+    {
+      "release_year": 2025,
+      "year": 2076,
+      "tft": 1.37539
+    },
+    {
+      "release_year": 2025,
+      "year": 2077,
+      "tft": 1.37895
+    },
+    {
+      "release_year": 2025,
+      "year": 2078,
+      "tft": 1.38256
+    },
+    {
+      "release_year": 2025,
+      "year": 2079,
+      "tft": 1.38611
+    },
+    {
+      "release_year": 2025,
+      "year": 2080,
+      "tft": 1.38969
+    },
+    {
+      "release_year": 2025,
+      "year": 2081,
+      "tft": 1.39329
+    },
+    {
+      "release_year": 2025,
+      "year": 2082,
+      "tft": 1.39681
+    },
+    {
+      "release_year": 2025,
+      "year": 2083,
+      "tft": 1.40042
+    },
+    {
+      "release_year": 2025,
+      "year": 2084,
+      "tft": 1.404
+    },
+    {
+      "release_year": 2025,
+      "year": 2085,
+      "tft": 1.40756
+    },
+    {
+      "release_year": 2025,
+      "year": 2086,
+      "tft": 1.41116
+    },
+    {
+      "release_year": 2025,
+      "year": 2087,
+      "tft": 1.41471
+    },
+    {
+      "release_year": 2025,
+      "year": 2088,
+      "tft": 1.41831
+    },
+    {
+      "release_year": 2025,
+      "year": 2089,
+      "tft": 1.42187
+    },
+    {
+      "release_year": 2025,
+      "year": 2090,
+      "tft": 1.42542
+    },
+    {
+      "release_year": 2025,
+      "year": 2091,
+      "tft": 1.42904
+    },
+    {
+      "release_year": 2025,
+      "year": 2092,
+      "tft": 1.43263
+    },
+    {
+      "release_year": 2025,
+      "year": 2093,
+      "tft": 1.43618
+    },
+    {
+      "release_year": 2025,
+      "year": 2094,
+      "tft": 1.43975
+    },
+    {
+      "release_year": 2025,
+      "year": 2095,
+      "tft": 1.44333
+    },
+    {
+      "release_year": 2025,
+      "year": 2096,
+      "tft": 1.44692
+    },
+    {
+      "release_year": 2025,
+      "year": 2097,
+      "tft": 1.45049
+    },
+    {
+      "release_year": 2025,
+      "year": 2098,
+      "tft": 1.45406
+    },
+    {
+      "release_year": 2025,
+      "year": 2099,
+      "tft": 1.45765
+    },
+    {
+      "release_year": 2025,
+      "year": 2100,
+      "tft": 1.46121
+    }
+  ]
+}

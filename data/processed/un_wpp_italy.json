@@ -3,7 +3,7 @@
     "source": "UN WPP 2024 Demographic Indicators (Italy)",
     "source_url": "https://population.un.org/wpp/",
     "downloaded_at": "2026-05-16T00:00:00Z",
-    "pipeline_version": "9121af5",
+    "pipeline_version": "66dbf00",
     "transforms_applied": [
       "filter_italia",
       "normalize_un_wpp_tfr"

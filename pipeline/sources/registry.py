@@ -43,6 +43,13 @@ SOURCES: list[DataSource] = [
         snapshot_source="un_wpp",
         snapshot_extension="csv.gz",
     ),
+    DataSource(
+        id="D10",
+        description="Eurostat EUROPOP release storiche 2019/2023/2025 - TFT Italia",
+        snapshot_dataset_id="EUROSTAT_PROJ_NAASFR_RELEASES",
+        snapshot_source="eurostat",
+        snapshot_extension="csv.gz",
+    ),
 ]
 
 

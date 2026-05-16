@@ -3,7 +3,7 @@
     "source": "ISTAT 165_889_DF_DCIS_PREVDEM1_3",
     "source_url": "http://sdmx.istat.it/SDMXWS/rest/data/165_889_DF_DCIS_PREVDEM1_3",
     "downloaded_at": "2026-05-16T00:00:00Z",
-    "pipeline_version": "9121af5",
+    "pipeline_version": "66dbf00",
     "transforms_applied": [
       "filter_italia_tfr",
       "normalize_projection_2024"

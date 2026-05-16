@@ -1,0 +1,46 @@
+{
+  "audit": {
+    "source": "Backtest aggregato da tfr_historical + projections_archive",
+    "source_url": "see source files audit trails",
+    "downloaded_at": "2026-05-16T00:00:00Z",
+    "pipeline_version": "66dbf00",
+    "transforms_applied": [
+      "compute_all_backtests"
+    ],
+    "validation_passed": true,
+    "datapoint_count": 3,
+    "notes": "MAE, RMSE, signed bias per ogni release archive"
+  },
+  "data": [
+    {
+      "release_year": 2019,
+      "n_overlap": 6,
+      "first_year": 2019.0,
+      "last_year": 2024.0,
+      "mae": 0.1011616667,
+      "rmse": 0.1089929973,
+      "signed_bias": 0.1011616667,
+      "max_abs_error": 0.16468
+    },
+    {
+      "release_year": 2023,
+      "n_overlap": 3,
+      "first_year": 2022.0,
+      "last_year": 2024.0,
+      "mae": 0.0384933333,
+      "rmse": 0.0481112399,
+      "signed_bias": 0.0382466667,
+      "max_abs_error": 0.07018
+    },
+    {
+      "release_year": 2025,
+      "n_overlap": 0,
+      "first_year": null,
+      "last_year": null,
+      "mae": null,
+      "rmse": null,
+      "signed_bias": null,
+      "max_abs_error": null
+    }
+  ]
+}

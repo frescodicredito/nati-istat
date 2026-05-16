@@ -15,6 +15,13 @@ import sys
 from datetime import UTC, date, datetime
 from pathlib import Path
 
+import pandas as pd
+
+from sources.eurostat_projections import (
+    EUROSTAT_RELEASES,
+    download_eurostat_releases,
+    load_all_releases,
+)
 from sources.istat_projections import normalize_projection_2024
 from sources.istat_sdmx import download_istat_dataset, load_istat_snapshot
 from sources.istat_tfr import normalize_tfr_dataframe
@@ -24,6 +31,7 @@ from sources.schema import AuditTrail
 from sources.snapshot import resolve_snapshot_path
 from sources.un_wpp import download_un_wpp, normalize_un_wpp_tfr
 from transforms.aggregator import build_scenarios_comparison
+from transforms.projection_backtest import compute_all_backtests
 
 logging.basicConfig(
     level=logging.INFO,
@@ -232,6 +240,46 @@ def build_d11(args: argparse.Namespace, snapshot_date: date, pipeline_ver: str) 
     )
 
 
+def build_d10(args: argparse.Namespace, snapshot_date: date, pipeline_ver: str) -> None:
+    """D10: Eurostat EUROPOP release storiche 2019/2023/2025 TFT Italia."""
+    snapshot_dir = DATA_RAW / "eurostat" / snapshot_date.isoformat()
+
+    if not args.no_download and not args.validate_only:
+        download_eurostat_releases(snapshot_dir)
+
+    if not snapshot_dir.exists():
+        # Fallback: latest snapshot
+        eurostat_dir = DATA_RAW / "eurostat"
+        candidates = sorted(eurostat_dir.glob("*"))
+        if not candidates:
+            raise FileNotFoundError("Nessuno snapshot Eurostat presente")
+        snapshot_dir = candidates[-1]
+
+    df = load_all_releases(snapshot_dir)
+    audit = AuditTrail(
+        source="Eurostat EUROPOP NAASFR releases 2019/2023/2025",
+        source_url="https://ec.europa.eu/eurostat/databrowser/explore/all/popul",
+        downloaded_at=datetime.combine(snapshot_date, datetime.min.time(), tzinfo=UTC),
+        pipeline_version=pipeline_ver,
+        transforms_applied=["filter_total_baseline", "concat_releases"],
+        validation_passed=True,
+        datapoint_count=len(df),
+        notes=f"{len(EUROSTAT_RELEASES)} release storiche TFT Italia",
+    )
+    output_path = write_dataset(
+        "projections_archive.json",
+        df.to_dict(orient="records"),
+        audit,
+    )
+    n_releases = df["release_year"].nunique()
+    logger.info(
+        "[D10] %s: %d punti su %d release",
+        output_path.name,
+        len(df),
+        n_releases,
+    )
+
+
 def build_aggregates(snapshot_date: date, pipeline_ver: str) -> None:
     """Costruisce JSON aggregati per consumo frontend.
 
@@ -256,6 +304,35 @@ def build_aggregates(snapshot_date: date, pipeline_ver: str) -> None:
         len(aggregate["istat_mediano"]),
         len(aggregate["no_recovery"]),
     )
+
+
+def build_backtest(snapshot_date: date, pipeline_ver: str) -> None:
+    """Calcola metriche backtest delle release Eurostat vs dato osservato."""
+    actual = pd.DataFrame(
+        json.loads((DATA_PROCESSED / "tfr_historical.json").read_text())["data"]
+    )
+    projections = pd.DataFrame(
+        json.loads((DATA_PROCESSED / "projections_archive.json").read_text())["data"]
+    )
+    metrics = compute_all_backtests(actual, projections)
+    audit = AuditTrail(
+        source="Backtest aggregato da tfr_historical + projections_archive",
+        source_url="see source files audit trails",
+        downloaded_at=datetime.combine(snapshot_date, datetime.min.time(), tzinfo=UTC),
+        pipeline_version=pipeline_ver,
+        transforms_applied=["compute_all_backtests"],
+        validation_passed=True,
+        datapoint_count=len(metrics),
+        notes="MAE, RMSE, signed bias per ogni release archive",
+    )
+    # Pandas to_dict mantiene NaN; convertirlo via to_json + parse risolve.
+    records = json.loads(metrics.to_json(orient="records"))
+    output_path = write_dataset(
+        "projection_backtest.json",
+        records,
+        audit,
+    )
+    logger.info("[BCK] %s: %d release backtested", output_path.name, len(metrics))
 
 
 def _find_most_recent_snapshot(source_folder: str, dataset_id: str, extension: str) -> Path:
@@ -298,8 +375,10 @@ def main() -> int:
         build_d1(args, snapshot_date, pipeline_ver)
         build_d3(args, snapshot_date, pipeline_ver)
         build_d9(args, snapshot_date, pipeline_ver)
+        build_d10(args, snapshot_date, pipeline_ver)
         build_d11(args, snapshot_date, pipeline_ver)
         build_aggregates(snapshot_date, pipeline_ver)
+        build_backtest(snapshot_date, pipeline_ver)
     except Exception:
         logger.exception("Build fallita")
         return 1

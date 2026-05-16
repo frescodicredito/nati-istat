@@ -53,6 +53,23 @@ export interface UNWPPPoint {
   value: number;
 }
 
+export interface ProjectionArchivePoint {
+  release_year: number;
+  year: number;
+  tft: number;
+}
+
+export interface BacktestMetric {
+  release_year: number;
+  n_overlap: number;
+  first_year?: number;
+  last_year?: number;
+  mae: number | null;
+  rmse: number | null;
+  signed_bias: number | null;
+  max_abs_error?: number;
+}
+
 export interface ScenariosComparison {
   historical: TFTPoint[];
   istat_mediano: { year: number; value: number }[];

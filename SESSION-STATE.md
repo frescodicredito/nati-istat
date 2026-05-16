@@ -46,8 +46,8 @@ L'utente ha condiviso uno screenshot WhatsApp con amici (Marchello, Andrea Nuovo
 ### Deploy / infra
 
 - **Vercel project**: `frescodicreditos-projects/nati-istat`
-  - Project ID: `prj_TOnIV1Vag3OmjHMVh4CbioObVJdt`
-  - Org ID: `team_xBLXMQR66bHAYPkBL4cJF739`
+  - Project ID: `prj_REDACTED`
+  - Org ID: `team_REDACTED`
   - Root directory: `web` (settata via API PATCH /v9/projects/{id})
   - Framework: nextjs (auto-detect)
   - URL: https://nati-istat.vercel.app
@@ -103,8 +103,8 @@ Il glob `../data/processed/**/*.json` causa `TurbopackInternalError`. Soluzione:
 
 ### Resources / IDs
 
-- Vercel project ID: `prj_TOnIV1Vag3OmjHMVh4CbioObVJdt`
-- Vercel org ID: `team_xBLXMQR66bHAYPkBL4cJF739`
+- Vercel project ID: `prj_REDACTED` (mascherato per pubblicazione; ID reale in `.vercel/project.json` locale, non committato)
+- Vercel org ID: `team_REDACTED` (idem)
 - GitHub repo: `frescodicredito/nati-istat`
 - Snapshot date: `2026-05-16` (in `data/raw/<source>/2026-05-16/`)
 - Pipeline version riferita nei JSON audit trail: SHA del commit (es. `66dbf00`)

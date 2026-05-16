@@ -58,7 +58,7 @@ def download_istat_dataset(
         "sha256": hashlib.sha256(content).hexdigest(),
         "size_bytes": len(content),
         "downloaded_at": datetime.now(UTC).isoformat(),
-        "path": str(snapshot_path),
+        "filename": snapshot_path.name,
         "rows": len(df),
         "columns": list(df.columns),
     }

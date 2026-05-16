@@ -2096,7 +2096,7 @@ PLAN
 - [ ] **Step 1: Bootstrap Next.js**
 
 ```bash
-cd /Users/fdicredico/ricerche/nati-istat
+cd <repo-root>
 pnpm create next-app@latest web --typescript --tailwind --app --src-dir false --import-alias "@/*" --turbopack --no-eslint --no-git --use-pnpm
 ```
 
@@ -4400,7 +4400,7 @@ PLAN
 - [ ] **Step 1: Crea repo pubblico**
 
 ```bash
-cd /Users/fdicredico/ricerche/nati-istat
+cd <repo-root>
 gh repo create nati-istat \
   --public \
   --description "Long-read editoriale sulle proiezioni demografiche ISTAT del tasso di fecondità italiano" \
@@ -4460,7 +4460,7 @@ In alternativa, configurazione direttamente via Vercel CLI step 2.
 - [ ] **Step 2: Link project + deploy**
 
 ```bash
-cd /Users/fdicredico/ricerche/nati-istat
+cd <repo-root>
 vercel link --yes --project nati-istat
 # Risponde: scope frescodicredito, link a project new nati-istat
 ```

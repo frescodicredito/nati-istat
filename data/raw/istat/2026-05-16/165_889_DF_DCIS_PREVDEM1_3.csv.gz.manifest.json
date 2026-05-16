@@ -4,7 +4,6 @@
   "sha256": "1ed1a521a85a002fb836335fa53bfecfd29d7055059c9eee0dba415720d5c4a1",
   "size_bytes": 977731,
   "downloaded_at": "2026-05-16T11:39:54.943547+00:00",
-  "path": "/Users/fdicredico/ricerche/nati-istat/data/raw/istat/2026-05-16/165_889_DF_DCIS_PREVDEM1_3.csv.gz",
   "rows": 287280,
   "columns": [
     "TIME_PERIOD",
@@ -15,5 +14,6 @@
     "AGE",
     "SEX",
     "value"
-  ]
+  ],
+  "filename": "165_889_DF_DCIS_PREVDEM1_3.csv.gz"
 }

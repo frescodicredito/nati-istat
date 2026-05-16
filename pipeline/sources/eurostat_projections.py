@@ -40,7 +40,7 @@ def download_eurostat_releases(snapshot_dir: Path, *, force: bool = False) -> di
         target = snapshot_dir / f"{rel['dataset']}.csv.gz"
         if target.exists() and not force:
             logger.info("Snapshot esistente per %s, riuso", rel["dataset"])
-            manifest[rel["dataset"]] = {"path": str(target), "cached": True}
+            manifest[rel["dataset"]] = {"filename": target.name, "cached": True}
             continue
 
         logger.info("Download Eurostat %s (release %s)", rel["dataset"], rel["release_year"])

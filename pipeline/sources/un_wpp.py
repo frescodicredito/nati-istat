@@ -34,7 +34,7 @@ def download_un_wpp(snapshot_path: Path, *, force: bool = False) -> dict:
     """Scarica Excel UN WPP, filtra Italia TFR, salva snapshot CSV.gz."""
     if snapshot_path.exists() and not force:
         logger.info("Snapshot UN WPP esistente, riuso")
-        return {"path": str(snapshot_path), "cached": True}
+        return {"filename": snapshot_path.name, "cached": True}
 
     snapshot_path.parent.mkdir(parents=True, exist_ok=True)
     logger.info("Download UN WPP Excel (~26MB) da %s", UN_WPP_URL)
@@ -66,7 +66,7 @@ def download_un_wpp(snapshot_path: Path, *, force: bool = False) -> dict:
     cache_xlsx.unlink()
     logger.info("Salvato CSV.gz: %d bytes", snapshot_path.stat().st_size)
     return {
-        "path": str(snapshot_path),
+        "filename": snapshot_path.name,
         "url": UN_WPP_URL,
         "downloaded_at": datetime.now(UTC).isoformat(),
         "rows": len(full),

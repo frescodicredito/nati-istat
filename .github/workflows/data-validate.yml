@@ -1,0 +1,62 @@
+name: Data Pipeline Validation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "pipeline/**"
+      - "data/**"
+      - ".github/workflows/data-validate.yml"
+  pull_request:
+    paths:
+      - "pipeline/**"
+      - "data/**"
+  schedule:
+    - cron: "0 3 * * 1"  # Lunedì 03:00 UTC
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          version: "latest"
+          enable-cache: true
+
+      - name: Sync deps
+        working-directory: pipeline
+        run: uv sync --frozen
+
+      - name: Lint
+        working-directory: pipeline
+        run: uv run ruff check
+
+      - name: Format check
+        working-directory: pipeline
+        run: uv run ruff format --check
+
+      - name: Unit tests
+        working-directory: pipeline
+        run: uv run pytest tests/ -v
+
+      - name: Build from frozen snapshots (no network)
+        working-directory: pipeline
+        run: uv run python build.py --no-download
+
+      - name: Validators on processed JSON
+        working-directory: pipeline
+        run: uv run pytest validators/ -v
+
+      - name: Hash drift check on data/processed/
+        run: |
+          # I JSON dovrebbero essere bit-identici al committed dopo --no-download
+          # Note: il timestamp downloaded_at usa la data dello snapshot, quindi è stabile
+          # Differenze su pipeline_version sono attese se il SHA cambia.
+          if ! git diff --quiet data/processed/; then
+            echo "::warning::data/processed/ ha drift dopo build --no-download"
+            git diff data/processed/ | head -100
+          fi

@@ -1,0 +1,42 @@
+name: Web Lint + Type Check + Build
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "web/**"
+      - "data/processed/**"
+      - ".github/workflows/web-check.yml"
+  pull_request:
+    paths:
+      - "web/**"
+      - "data/processed/**"
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+          cache-dependency-path: web/pnpm-lock.yaml
+
+      - name: Install
+        working-directory: web
+        run: pnpm install --frozen-lockfile
+
+      - name: Type check
+        working-directory: web
+        run: pnpm tsc --noEmit
+
+      - name: Production build
+        working-directory: web
+        run: pnpm build

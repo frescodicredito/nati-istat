@@ -22,6 +22,7 @@ from sources.istat_tfr_citizenship import normalize_tfr_by_citizenship
 from sources.registry import get_source
 from sources.schema import AuditTrail
 from sources.snapshot import resolve_snapshot_path
+from transforms.aggregator import build_scenarios_comparison
 
 logging.basicConfig(
     level=logging.INFO,
@@ -171,6 +172,32 @@ def build_d9(args: argparse.Namespace, snapshot_date: date, pipeline_ver: str) -
     )
 
 
+def build_aggregates(snapshot_date: date, pipeline_ver: str) -> None:
+    """Costruisce JSON aggregati per consumo frontend.
+
+    Per ora: scenarios_comparison.json (cap 6 comparator).
+    """
+    aggregate = build_scenarios_comparison(DATA_PROCESSED)
+    audit = AuditTrail(
+        source="Aggregated from tfr_historical + projection_2024 + transforms.scenario_models",
+        source_url="see source files audit trails",
+        downloaded_at=datetime.combine(snapshot_date, datetime.min.time(), tzinfo=UTC),
+        pipeline_version=pipeline_ver,
+        transforms_applied=["build_scenarios_comparison", "build_no_recovery_scenario"],
+        validation_passed=True,
+        datapoint_count=sum(len(v) for v in aggregate.values() if isinstance(v, list)),
+        notes="Storico osservato + scenari ISTAT (mediano/lower90/upper90) + nostro no_recovery",
+    )
+    output_path = write_dataset("scenarios_comparison.json", aggregate, audit)
+    logger.info(
+        "[AGG] %s: historical=%d istat_med=%d no_recovery=%d",
+        output_path.name,
+        len(aggregate["historical"]),
+        len(aggregate["istat_mediano"]),
+        len(aggregate["no_recovery"]),
+    )
+
+
 def _find_most_recent_snapshot(source_folder: str, dataset_id: str, extension: str) -> Path:
     source_dir = DATA_RAW / source_folder
     if not source_dir.exists():
@@ -203,7 +230,8 @@ def main() -> int:
         build_d1(args, snapshot_date, pipeline_ver)
         build_d3(args, snapshot_date, pipeline_ver)
         build_d9(args, snapshot_date, pipeline_ver)
-        # D11 UN WPP aggiunto in seguito (Excel download separato)
+        build_aggregates(snapshot_date, pipeline_ver)
+        # D11 UN WPP + archive proiezioni storiche aggiunti in seguito
     except Exception:
         logger.exception("Build fallita")
         return 1

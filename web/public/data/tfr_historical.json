@@ -1,0 +1,121 @@
+{
+  "audit": {
+    "source": "ISTAT 25_326_DF_DCIS_FECONDITA1_5",
+    "source_url": "http://sdmx.istat.it/SDMXWS/rest/data/25_326_DF_DCIS_FECONDITA1_5",
+    "downloaded_at": "2026-05-16T00:00:00Z",
+    "pipeline_version": "7b6c542",
+    "transforms_applied": [
+      "filter_italia_total",
+      "normalize_tfr_dataframe"
+    ],
+    "validation_passed": true,
+    "datapoint_count": 26,
+    "notes": "TFR Italia 1999-2024 (dataset condiviso con D3)"
+  },
+  "data": [
+    {
+      "year": 1999,
+      "tfr": 1.23
+    },
+    {
+      "year": 2000,
+      "tfr": 1.26
+    },
+    {
+      "year": 2001,
+      "tfr": 1.25
+    },
+    {
+      "year": 2002,
+      "tfr": 1.27
+    },
+    {
+      "year": 2003,
+      "tfr": 1.29
+    },
+    {
+      "year": 2004,
+      "tfr": 1.34
+    },
+    {
+      "year": 2005,
+      "tfr": 1.33
+    },
+    {
+      "year": 2006,
+      "tfr": 1.37
+    },
+    {
+      "year": 2007,
+      "tfr": 1.39
+    },
+    {
+      "year": 2008,
+      "tfr": 1.44
+    },
+    {
+      "year": 2009,
+      "tfr": 1.44
+    },
+    {
+      "year": 2010,
+      "tfr": 1.44
+    },
+    {
+      "year": 2011,
+      "tfr": 1.42
+    },
+    {
+      "year": 2012,
+      "tfr": 1.42
+    },
+    {
+      "year": 2013,
+      "tfr": 1.39
+    },
+    {
+      "year": 2014,
+      "tfr": 1.38
+    },
+    {
+      "year": 2015,
+      "tfr": 1.36
+    },
+    {
+      "year": 2016,
+      "tfr": 1.36
+    },
+    {
+      "year": 2017,
+      "tfr": 1.34
+    },
+    {
+      "year": 2018,
+      "tfr": 1.31
+    },
+    {
+      "year": 2019,
+      "tfr": 1.27
+    },
+    {
+      "year": 2020,
+      "tfr": 1.24
+    },
+    {
+      "year": 2021,
+      "tfr": 1.25
+    },
+    {
+      "year": 2022,
+      "tfr": 1.24
+    },
+    {
+      "year": 2023,
+      "tfr": 1.2
+    },
+    {
+      "year": 2024,
+      "tfr": 1.18
+    }
+  ]
+}

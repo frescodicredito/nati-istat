@@ -1,0 +1,247 @@
+{
+  "audit": {
+    "source": "ISTAT 25_326_DF_DCIS_FECONDITA1_5",
+    "source_url": "http://sdmx.istat.it/SDMXWS/rest/data/25_326_DF_DCIS_FECONDITA1_5",
+    "downloaded_at": "2026-05-16T00:00:00Z",
+    "pipeline_version": "b243b4f",
+    "transforms_applied": [
+      "filter_italia_citizenship",
+      "normalize_tfr_by_citizenship"
+    ],
+    "validation_passed": true,
+    "datapoint_count": 46,
+    "notes": "TFR per cittadinanza italiana/straniera (riusa snapshot D1)"
+  },
+  "data": [
+    {
+      "year": 2002,
+      "citizenship": "italiane",
+      "tfr": 1.21
+    },
+    {
+      "year": 2002,
+      "citizenship": "straniere",
+      "tfr": 2.82
+    },
+    {
+      "year": 2003,
+      "citizenship": "italiane",
+      "tfr": 1.24
+    },
+    {
+      "year": 2003,
+      "citizenship": "straniere",
+      "tfr": 2.47
+    },
+    {
+      "year": 2004,
+      "citizenship": "italiane",
+      "tfr": 1.26
+    },
+    {
+      "year": 2004,
+      "citizenship": "straniere",
+      "tfr": 2.84
+    },
+    {
+      "year": 2005,
+      "citizenship": "italiane",
+      "tfr": 1.25
+    },
+    {
+      "year": 2005,
+      "citizenship": "straniere",
+      "tfr": 2.69
+    },
+    {
+      "year": 2006,
+      "citizenship": "italiane",
+      "tfr": 1.27
+    },
+    {
+      "year": 2006,
+      "citizenship": "straniere",
+      "tfr": 2.79
+    },
+    {
+      "year": 2007,
+      "citizenship": "italiane",
+      "tfr": 1.29
+    },
+    {
+      "year": 2007,
+      "citizenship": "straniere",
+      "tfr": 2.67
+    },
+    {
+      "year": 2008,
+      "citizenship": "italiane",
+      "tfr": 1.33
+    },
+    {
+      "year": 2008,
+      "citizenship": "straniere",
+      "tfr": 2.53
+    },
+    {
+      "year": 2009,
+      "citizenship": "italiane",
+      "tfr": 1.33
+    },
+    {
+      "year": 2009,
+      "citizenship": "straniere",
+      "tfr": 2.43
+    },
+    {
+      "year": 2010,
+      "citizenship": "italiane",
+      "tfr": 1.33
+    },
+    {
+      "year": 2010,
+      "citizenship": "straniere",
+      "tfr": 2.31
+    },
+    {
+      "year": 2011,
+      "citizenship": "italiane",
+      "tfr": 1.32
+    },
+    {
+      "year": 2011,
+      "citizenship": "straniere",
+      "tfr": 2.22
+    },
+    {
+      "year": 2012,
+      "citizenship": "italiane",
+      "tfr": 1.31
+    },
+    {
+      "year": 2012,
+      "citizenship": "straniere",
+      "tfr": 2.18
+    },
+    {
+      "year": 2013,
+      "citizenship": "italiane",
+      "tfr": 1.29
+    },
+    {
+      "year": 2013,
+      "citizenship": "straniere",
+      "tfr": 2.09
+    },
+    {
+      "year": 2014,
+      "citizenship": "italiane",
+      "tfr": 1.29
+    },
+    {
+      "year": 2014,
+      "citizenship": "straniere",
+      "tfr": 2.06
+    },
+    {
+      "year": 2015,
+      "citizenship": "italiane",
+      "tfr": 1.28
+    },
+    {
+      "year": 2015,
+      "citizenship": "straniere",
+      "tfr": 2.01
+    },
+    {
+      "year": 2016,
+      "citizenship": "italiane",
+      "tfr": 1.27
+    },
+    {
+      "year": 2016,
+      "citizenship": "straniere",
+      "tfr": 2.04
+    },
+    {
+      "year": 2017,
+      "citizenship": "italiane",
+      "tfr": 1.25
+    },
+    {
+      "year": 2017,
+      "citizenship": "straniere",
+      "tfr": 2.06
+    },
+    {
+      "year": 2018,
+      "citizenship": "italiane",
+      "tfr": 1.22
+    },
+    {
+      "year": 2018,
+      "citizenship": "straniere",
+      "tfr": 2.03
+    },
+    {
+      "year": 2019,
+      "citizenship": "italiane",
+      "tfr": 1.18
+    },
+    {
+      "year": 2019,
+      "citizenship": "straniere",
+      "tfr": 1.99
+    },
+    {
+      "year": 2020,
+      "citizenship": "italiane",
+      "tfr": 1.17
+    },
+    {
+      "year": 2020,
+      "citizenship": "straniere",
+      "tfr": 1.89
+    },
+    {
+      "year": 2021,
+      "citizenship": "italiane",
+      "tfr": 1.18
+    },
+    {
+      "year": 2021,
+      "citizenship": "straniere",
+      "tfr": 1.87
+    },
+    {
+      "year": 2022,
+      "citizenship": "italiane",
+      "tfr": 1.18
+    },
+    {
+      "year": 2022,
+      "citizenship": "straniere",
+      "tfr": 1.86
+    },
+    {
+      "year": 2023,
+      "citizenship": "italiane",
+      "tfr": 1.14
+    },
+    {
+      "year": 2023,
+      "citizenship": "straniere",
+      "tfr": 1.82
+    },
+    {
+      "year": 2024,
+      "citizenship": "italiane",
+      "tfr": 1.11
+    },
+    {
+      "year": 2024,
+      "citizenship": "straniere",
+      "tfr": 1.81
+    }
+  ]
+}

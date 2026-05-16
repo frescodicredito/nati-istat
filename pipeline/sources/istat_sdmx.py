@@ -48,6 +48,7 @@ def download_istat_dataset(
     df = sdmx.to_pandas(msg).reset_index()
 
     snapshot_path.parent.mkdir(parents=True, exist_ok=True)
+    # Compression auto-detected da pandas in base all'estensione (.csv.gz → gzip)
     df.to_csv(snapshot_path, index=False)
     content = snapshot_path.read_bytes()
 

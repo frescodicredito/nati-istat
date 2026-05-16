@@ -1,10 +1,10 @@
 {
   "dataset_id": "25_326_DF_DCIS_FECONDITA1_5",
   "url": "http://sdmx.istat.it/SDMXWS/rest/data/25_326_DF_DCIS_FECONDITA1_5",
-  "sha256": "22556ac97e2e9216a8fc5a7826ad1b595b1e4580341d84fd720cccaf5999b72f",
-  "size_bytes": 358001,
-  "downloaded_at": "2026-05-16T11:32:08.688927+00:00",
-  "path": "/Users/fdicredico/ricerche/nati-istat/data/raw/istat/2026-05-16/25_326_DF_DCIS_FECONDITA1_5.csv",
+  "sha256": "8e66930d227bf9935ea05db41445f3e5e278a5e1aefeafebf26d87fadb2369ca",
+  "size_bytes": 37328,
+  "downloaded_at": "2026-05-16T11:39:16.249776+00:00",
+  "path": "/Users/fdicredico/ricerche/nati-istat/data/raw/istat/2026-05-16/25_326_DF_DCIS_FECONDITA1_5.csv.gz",
   "rows": 9846,
   "columns": [
     "TIME_PERIOD",

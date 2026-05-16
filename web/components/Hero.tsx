@@ -39,11 +39,11 @@ export function Hero() {
 
   return (
     <section className="border-b border-[color:var(--color-border)] bg-[color:var(--color-surface)]">
-      <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-8 sm:pt-24">
-        <div className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--color-fg-subtle)]">
+      <div className="mx-auto max-w-[1200px] px-6 pt-10 pb-4 sm:pt-14">
+        <div className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--color-fg-subtle)]">
           Tasso di fecondità totale, Italia · 1952–2080
         </div>
-        <h1 className="!mt-0 max-w-[820px] font-serif text-3xl leading-[1.1] tracking-tight sm:text-5xl">
+        <h1 className="!mt-0 max-w-[820px] font-serif text-3xl leading-[1.05] tracking-tight sm:text-5xl">
           Le proiezioni si alzano.{" "}
           <span className="text-[color:var(--color-fg-muted)]">
             Il dato no.
@@ -51,9 +51,9 @@ export function Hero() {
         </h1>
       </div>
 
-      <div className="mx-auto max-w-[1200px] px-6 pb-10">
+      <div className="mx-auto max-w-[1200px] px-6 pb-8">
         <PlotChart
-          aspectRatio={0.42}
+          aspectRatio={0.4}
           alt="Tasso di fecondità totale italiano dal 1952 al 2024 in rosso (osservato), poi quattro linee di proiezione di varie release Eurostat (2019, 2023, 2025) e ISTAT (2024) che divergono verso l'alto fino al 2100."
           plotOptions={{
             marginTop: 30,

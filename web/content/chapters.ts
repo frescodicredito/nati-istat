@@ -25,9 +25,9 @@ export const chapterContent = {
       "Sovrapponendo le tre release Eurostat di proiezione (2019, 2023, 2025) e la release ISTAT 2024 con il dato osservato, emerge un pattern: ogni release con sufficiente overlap temporale mostra bias positivo. La proiezione del TFT, in media, è sopra il dato realizzato.",
   },
   c4: {
-    title: "Le bande di incertezza della proiezione ISTAT",
+    title: "Perché tutte le proiezioni assumono un recupero",
     opening:
-      "Le proiezioni di lungo periodo sono per costruzione scenari, non previsioni puntuali. ISTAT pubblica intervalli di confidenza al 50% e al 90% attorno allo scenario mediano. Lo scarto tra mediana e bande quantifica la dipendenza della traiettoria dalle assunzioni di modello.",
+      "Il cap 3 ha documentato il pattern empirico: ogni release sovrastima. Qui la domanda è perché. Le proiezioni di lungo periodo sono per costruzione scenari, ma le scelte di scenario non sono neutre. ISTAT, Eurostat e UN condividono un nucleo di assunzioni metodologiche che producono sistematicamente una curva di recupero, anche quando il dato osservato indica il contrario.",
   },
   c5: {
     title: "Le previsioni economiche basate su queste proiezioni",

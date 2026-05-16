@@ -180,6 +180,95 @@ uv run python build.py                     # Build completa con refresh dati`}</
         </li>
       </ul>
 
+      <h2 id="bibliografia" className="scroll-mt-20">
+        Riferimenti bibliografici
+      </h2>
+      <p className="text-sm text-[color:var(--color-fg-muted)]">
+        Fonti academic citate nel cap 4 per il framework metodologico dei modelli di
+        proiezione del TFT.
+      </p>
+      <ul className="mt-4 ml-6 list-disc space-y-3 text-sm">
+        <li>
+          <strong>Bongaarts, J. &amp; Sobotka, T.</strong> (2012).{" "}
+          <em>
+            A Demographic Explanation for the Recent Rise in European Fertility.
+          </em>{" "}
+          Population and Development Review, 38(1), 83-120.{" "}
+          <span className="text-[color:var(--color-fg-muted)]">
+            — Definisce il framework di tempo distortion del TFT e fonda l'aspettativa
+            di catch-up fertility usata da UN/Eurostat.
+          </span>
+        </li>
+        <li>
+          <strong>Goldstein, J. R., Sobotka, T. &amp; Jasilioniene, A.</strong> (2009).{" "}
+          <em>The End of Lowest-Low Fertility?</em> Population and Development Review,
+          35(4), 663-699.{" "}
+          <span className="text-[color:var(--color-fg-muted)]">
+            — Paper che ha consolidato l'aspettativa di mean reversion in Europa.
+            Citato nei documenti metodologici Eurostat.
+          </span>
+        </li>
+        <li>
+          <strong>Lutz, W. &amp; Skirbekk, V.</strong> (2014).{" "}
+          <em>How education drives demography and knowledge informs projections.</em>
+          {" "}In World Population &amp; Human Capital in the 21st Century (Oxford
+          University Press).{" "}
+          <span className="text-[color:var(--color-fg-muted)]">
+            — Approccio alternativo Wittgenstein Centre, basato su scenari di
+            education invece che mean reversion. Non adottato da ISTAT/Eurostat.
+          </span>
+        </li>
+        <li>
+          <strong>Caltabiano, M., Castiglioni, M. &amp; Rosina, A.</strong> (2019).{" "}
+          <em>Lowest-low fertility: signs of a recovery in Italy?</em> Demographic
+          Research, 21, 681-718.{" "}
+          <span className="text-[color:var(--color-fg-muted)]">
+            — Discute specificità italiana del fallimento del catch-up nelle coorti
+            post-1980.
+          </span>
+        </li>
+        <li>
+          <strong>Auerbach, A. J.</strong> (2003). <em>Is There a Role for Discretionary
+          Fiscal Policy?</em> NBER Working Paper 9306.{" "}
+          <span className="text-[color:var(--color-fg-muted)]">
+            — Documenta forecast bias sistematico nelle previsioni economiche
+            istituzionali. Citato per analogia in cap 4.
+          </span>
+        </li>
+        <li>
+          <strong>Human Fertility Database (HFD)</strong>. Max Planck Institute for
+          Demographic Research &amp; Vienna Institute of Demography.{" "}
+          <a
+            className="underline underline-offset-2"
+            href="https://www.humanfertility.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            humanfertility.org
+          </a>{" "}
+          <span className="text-[color:var(--color-fg-muted)]">
+            — Fonte per completed cohort fertility Italia (coorti 1940-1985). Non
+            integrata nella pipeline di questo progetto, citata indirettamente.
+          </span>
+        </li>
+        <li>
+          <strong>ISTAT</strong> (2024). <em>Previsioni della popolazione residente
+          e delle famiglie. Anni 2023-2080.</em>{" "}
+          <a
+            className="underline underline-offset-2"
+            href="https://www.istat.it/it/archivio/295914"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            istat.it/archivio/295914
+          </a>{" "}
+          <span className="text-[color:var(--color-fg-muted)]">
+            — Report metodologico ufficiale della release 2024 utilizzata in questo
+            progetto.
+          </span>
+        </li>
+      </ul>
+
       <h2>Licenze</h2>
       <ul className="mt-4 ml-6 list-disc space-y-1">
         <li>

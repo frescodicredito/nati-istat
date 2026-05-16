@@ -22,7 +22,7 @@ const FILES = [
 export const metadata = {
   title: "Dati & download",
   description:
-    "Download dei dataset JSON di nati-istat. Audit trail incluso in ogni file.",
+    "Download dei dataset JSON del progetto TFT Italia. Audit trail incluso in ogni file.",
 };
 
 export default function DatiPage() {

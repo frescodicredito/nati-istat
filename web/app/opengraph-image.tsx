@@ -5,7 +5,7 @@ import { formatItalian } from "@/lib/format";
 
 export const runtime = "edge";
 export const alt =
-  "nati-istat — Le proiezioni del tasso di fecondità ISTAT confrontate con il dato osservato";
+  "TFT Italia — Le proiezioni del tasso di fecondità confrontate con il dato osservato";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -47,7 +47,7 @@ export default async function Image() {
             marginBottom: 24,
           }}
         >
-          nati-istat · maggio 2026
+          TFT Italia · maggio 2026
         </div>
         <div style={{ display: "flex", alignItems: "baseline", gap: 30 }}>
           <div style={{ fontSize: 140, fontWeight: 700, color: "#a8260b", lineHeight: 0.95 }}>
@@ -72,7 +72,7 @@ export default async function Image() {
             fontStyle: "italic",
           }}
         >
-          Le proiezioni ISTAT del tasso di fecondità contro il dato osservato.
+          Le proiezioni del tasso di fecondità italiano contro il dato osservato.
           Track record empirico e implicazioni economiche.
         </div>
       </div>

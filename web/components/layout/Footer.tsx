@@ -10,11 +10,11 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-3">
           <div>
             <div className="mb-2 font-serif text-base font-semibold text-[color:var(--color-fg)]">
-              nati-istat
+              TFT Italia
             </div>
             <p>
-              Le proiezioni demografiche ISTAT del tasso di fecondità italiano
-              confrontate con i dati osservati.
+              Le proiezioni demografiche del tasso di fecondità totale italiano
+              confrontate con i dati osservati 1952-2024.
             </p>
           </div>
           <div>

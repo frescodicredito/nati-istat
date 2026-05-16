@@ -16,7 +16,7 @@ export function TopNav() {
     <nav className="sticky top-0 z-50 border-b border-[color:var(--color-border)] bg-[color:var(--color-bg)]/85 backdrop-blur supports-[backdrop-filter]:bg-[color:var(--color-bg)]/70">
       <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-3 px-4 py-3 text-sm sm:px-6">
         <Link href="/" className="font-serif text-base font-semibold tracking-tight">
-          nati-istat
+          TFT Italia
         </Link>
         <div className="hidden items-center gap-1 lg:flex">
           {CHAPTERS.map((c) => (

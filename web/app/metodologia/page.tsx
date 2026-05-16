@@ -34,7 +34,7 @@ const DATASETS: { title: string; audit: AuditTrail; anchor: string }[] = [
 export const metadata = {
   title: "Metodologia",
   description:
-    "Fonti, ipotesi, trasformazioni e codice di nati-istat. Pipeline interamente riproducibile.",
+    "Fonti, ipotesi, trasformazioni e codice del progetto TFT Italia. Pipeline interamente riproducibile.",
 };
 
 export default function MetodologiaPage() {

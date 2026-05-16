@@ -173,13 +173,11 @@ export function Chapter4Assumptions() {
           una donna avrebbe se passasse tutta la vita riproduttiva con i tassi specifici
           per età osservati nell'anno corrente. Se le donne posticipano il primo figlio
           da 28 a 32 anni, il TFT crolla temporaneamente per ~5 anni anche senza alcun
-          cambio reale nel numero finale di figli. I modelli assumono che dopo il posticipo
-          arrivi il catch-up: donne in età 35-45 che recuperano i figli rinviati. Per le
-          coorti italiane nate dopo il 1980 questo catch-up non sta arrivando. La completed
-          cohort fertility per la coorte 1980 è attestata intorno a 1,4 figli, contro
-          un'aspettativa di proiezione vicina a 1,55 (Goldstein, Sobotka &amp; Jasilioniene,
-          2009; dati Human Fertility Database). Il posticipo, in Italia, si è tradotto in
-          rinuncia.
+          cambio reale nel numero finale di figli. I modelli (Goldstein, Sobotka &amp;
+          Jasilioniene, 2009) assumono che dopo il posticipo arrivi il catch-up: donne in
+          età 35-45 che recuperano i figli rinviati. Per le coorti italiane nate dopo il
+          1980 i dati Human Fertility Database non confermano il catch-up atteso. Il
+          posticipo, in Italia, si è tradotto in rinuncia parziale piuttosto che recupero.
         </p>
 
         <h4 className="mt-10 mb-3 font-mono text-xs uppercase tracking-widest text-[color:var(--color-fg-muted)]">
@@ -227,11 +225,11 @@ export function Chapter4Assumptions() {
         <p>
           Una proiezione di TFT in calo permanente costringe a politiche difficili: riforma
           pensioni, immigrazione strutturale, welfare familiare costoso. Una proiezione di
-          recupero modello dà respiro al decisore politico. Non è cospirazione, è un'inerzia
-          istituzionale ben documentata in letteratura sui forecast economici (Auerbach,
-          2003) e applicabile per analogia. Il punto rilevante non è motivazionale: è che
-          la metodologia di scenario centrale non incorpora un meccanismo di correzione
-          quando il pattern empirico cambia segno per quindici anni di fila.
+          recupero modello dà respiro al decisore politico. Non è cospirazione: è
+          un'osservazione applicabile per analogia ai forecast economici e demografici di
+          lungo periodo. Il punto rilevante non è motivazionale: è che la metodologia di
+          scenario centrale non incorpora un meccanismo di correzione quando il pattern
+          empirico osservato cambia segno per quindici anni di fila.
         </p>
 
         <p className="mt-10">

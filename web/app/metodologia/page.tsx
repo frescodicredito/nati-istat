@@ -219,20 +219,14 @@ uv run python build.py                     # Build completa con refresh dati`}</
           </span>
         </li>
         <li>
-          <strong>Caltabiano, M., Castiglioni, M. &amp; Rosina, A.</strong> (2019).{" "}
+          <strong>Caltabiano, M., Castiglioni, M. &amp; Rosina, A.</strong> (2009).{" "}
           <em>Lowest-low fertility: signs of a recovery in Italy?</em> Demographic
-          Research, 21, 681-718.{" "}
+          Research, 21(23), 681-718.{" "}
           <span className="text-[color:var(--color-fg-muted)]">
-            — Discute specificità italiana del fallimento del catch-up nelle coorti
-            post-1980.
-          </span>
-        </li>
-        <li>
-          <strong>Auerbach, A. J.</strong> (2003). <em>Is There a Role for Discretionary
-          Fiscal Policy?</em> NBER Working Paper 9306.{" "}
-          <span className="text-[color:var(--color-fg-muted)]">
-            — Documenta forecast bias sistematico nelle previsioni economiche
-            istituzionali. Citato per analogia in cap 4.
+            — Analizza l'evoluzione del TFT italiano per coorte 1950-1980 documentando
+            inizi di recupero nelle regioni del Nord a metà 2000s. I dati post-2010,
+            non disponibili al momento del paper, non hanno confermato il consolidamento
+            di quel trend.
           </span>
         </li>
         <li>

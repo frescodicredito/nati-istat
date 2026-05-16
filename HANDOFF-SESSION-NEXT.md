@@ -1,12 +1,12 @@
 # HANDOFF — nati-istat
 
-**Ultimo aggiornamento:** 16 maggio 2026 · sessione "perfezionamento finale"
+**Ultimo aggiornamento:** 16 maggio 2026 · sessione "cap 4 espanso + Hero finale"
 
 ---
 
 ## Stato corrente in una riga
 
-**Sito live e completo (https://nati-istat.vercel.app), repo pubblico (https://github.com/frescodicredito/nati-istat). Due blocchi residui prioritari: (1) Hero design da rifare bene visivamente, (2) cap 4 da espandere con vera spiegazione metodologica del bias.**
+**Sito live e completo (https://nati-istat.vercel.app), repo pubblico (https://github.com/frescodicredito/nati-istat). Tutti i blocchi prioritari risolti: cap 4 espanso con vera spiegazione metodologica del bias (6 sezioni + 7 fonti accademiche), Hero finale pulito senza estrapolazione lineare. Nessun pending bloccante, solo nice-to-have (vedi PENDING-WORK).**
 
 ---
 
@@ -48,76 +48,76 @@ Sessione molto lunga (~7-8 ore di lavoro effettivo) di costruzione end-to-end + 
 ### Deploy ed infra
 - Vercel project `nati-istat` con rootDirectory=`web` settata via API
 - Repo `github.com/frescodicredito/nati-istat` pubblico, CI Actions verdi
-- Commit più recente: `5b455cb` WIP Hero zoom 2000-2080
+- Commit più recente: `9561445` cap 4 espanso + Hero finale
 
 ---
 
-## Blocchi residui prioritari
+## Sessione 16 maggio 2026 (parte 2) — Cap 4 + Hero finali
 
-### 🔴 1. Cap 4 — vera spiegazione metodologica del bias (NUOVO, priorità ALTA)
+### Cap 4 espanso (commit `9561445`)
 
-**Domanda utente che ha fatto emergere il gap:**
+Risposta diretta alla domanda utente "ma questo sito spiega perché il dato viene sovrastimato?". Nuovo titolo cap 4: "Perché tutte le proiezioni assumono un recupero".
+
+Struttura aggiornata:
+- Sezione esistente (mantenuta): chart bande ISTAT 50%/90% + 3 assunzioni di modello
+- Sezione nuova: "Da dove vengono queste assunzioni — e perché falliscono per l'Italia"
+
+Sei sezioni numerate con eyebrow mono uppercase:
+1. Mean reversion: eredità modelli cross-country (Bongaarts & Sobotka 2012)
+2. Catch-up fertility: trappola del TFT come indicatore di periodo (Goldstein et al. 2009 + dati HFD coorti 1980)
+3. Convergenza europea come consenso istituzionale
+4. Componente straniere mal calibrata
+5. Aggiornamento tardivo e accumulo asimmetrico del bias
+6. Inerzia istituzionale (Auerbach 2003 per analogia con forecast economici)
+
+Bibliografia con 7 fonti accademiche aggiunta a `/metodologia#bibliografia`, linkata dal cap 4. Decimali nel testo ora dinamici da dataset (1,06 / 1,46 / 1,85) invece di valori hardcoded incoerenti con la caption.
+
+### Hero finale (commit `9561445`)
+
+Rimosso il trend lineare estrapolato 2024-2080 — estrapolazione 56 anni non difendibile, produceva diagonale fuori dominio Y. Layout standard senza `flex min-h-svh`: più compatto, asse X chiaro con tick ogni 10 anni + 2024 evidenziato.
+
+Cosa contiene:
+- Eyebrow "Tasso di fecondità totale, Italia · 2000 → 2080"
+- Headline "Tutte le previsioni proiettano un recupero. Il dato osservato no."
+- Chart 2000-2080: osservato rosso (2000-2024) + 4 release proiezione (Eurostat 2019/2023/2025 + ISTAT 2024 mediano)
+- Ruleline verticale tratteggiata sul 2024 (separa osservato da proiezione)
+- Label terminali "ISTAT → 1,46" e "Eurostat 2025 → 1,39"
+- KPI strip 4 celle: TFT 2024 / ISTAT mediano 2080 / Bias Eurostat 2019 / Anni di dati
+
+### Verifica live (16 maggio 2026, end of session)
+
+- https://nati-istat.vercel.app/ — Hero + cap 4 live
+- https://nati-istat.vercel.app/metodologia#bibliografia — 7 citation items presenti
+- Cap 0/1/2/3/5/6 visual audit — nessuna regressione
+- Build TypeScript pulito (`npx tsc --noEmit` zero errori)
+- `pnpm build` produzione pulito
+- Nessun console error in browser
+
+---
+
+## Stato pending
+
+**Nessun blocco prioritario.** I due blocchi 🔴 di sessione precedente (cap 4 spiegazione bias + Hero design finale) sono entrambi risolti e deployati live. Vedi `PENDING-WORK.md` per nice-to-have residui (release storiche ISTAT PDF, UN WPP Low/High, A11y → 100, custom domain).
+
+---
+
+## Blocchi storici (risolti)
+
+### ~~Cap 4 — vera spiegazione metodologica del bias~~ → RISOLTO commit `9561445`
+
+Domanda utente d'origine:
 > "ma questo sito spiega perché il dato viene sovrastimato? quali sono le ragioni per cui stimano una curva che va contro al trend?"
 
-**Diagnosi:** il cap 4 attuale elenca 3 assunzioni di modello in bullet point ma non spiega:
-- Da dove vengono metodologicamente quelle assunzioni
-- Perché i demografi continuano ad adottarle nonostante il bias documentato dal cap 3
-- Quali inerzie istituzionali tengono in vita assunzioni smentite dai dati italiani
+Diagnosi: cap 4 originale elencava 3 assunzioni di modello senza spiegare provenienza metodologica, ragioni del fallimento per l'Italia, inerzie istituzionali. Risolto con 6 sezioni numerate + bibliografia 7 fonti (vedi sopra).
 
-Questo è il **vero contenuto investigativo che manca al sito**. Per il target audience italiano data-savvy è quello che giustifica il tono affilato del long-read.
+### ~~Hero design finale~~ → RISOLTO commit `9561445`
 
-**Specifica completa di cosa scrivere e come:** `docs/superpowers/specs/2026-05-16-cap4-spiegazione-bias-bozza.md`
+Tre iterazioni intermedie (numero gigante 1,18 → fan chart 1952-2080 → zoom 2000-2080 con trend lineare WIP) hanno portato alla versione attuale: zoom 2000-2080 senza trend lineare estrapolato, layout senza flex min-h-svh, asse X chiaro, label terminali. Verificato visivamente live, nessun bug residuo.
 
-Quella spec contiene:
-- 6 punti metodologici da articolare (mean reversion, catch-up fertility, convergenza, componente straniere mal calibrata, aggiornamento tardivo, bias istituzionale)
-- Letteratura di riferimento da consultare (Bongaarts & Sobotka, Goldstein, Lutz, Caltabiano, Wittgenstein Centre)
-- Struttura editoriale proposta
-- Constraint di tono (rigoroso, non polemico, citazioni academic-style)
-- Stima effort: 3.5-5 ore in sessione dedicata
-- Strategia esecuzione: prima ricerca, poi bozza markdown, poi integrazione codice React
+### Constraint editoriali consolidati
 
-**Single entry point:** `docs/superpowers/specs/2026-05-16-cap4-spiegazione-bias-bozza.md` + `web/components/chapters/Chapter4Assumptions.tsx`
-
-### 🔴 2. Hero design — feedback visivo non risolto
-
-L'utente ha visto il Hero in due iterazioni e ha espresso feedback esplicito:
-
-**Iterazione 1 — numero gigante "1,18"**
-> "non mi piace molto la hero di partenza, mi sembra un po' banale. Era più figo il grafico, oppure non ci sono altre soluzioni d'impatto? il target è molto attento ai dati e infografiche"
-
-**Iterazione 2 — fan chart 1952-2080**
-> "ma sei sicuro che abbia senso questa roba? perché 'fino al 1980'? è significativo questo grafico come inizio?"
-> "mancano anche gli anni sulle ascisse"
-> "fai un'analisi e cura molto questa parte della nostra dashboard"
-
-**Iterazione 3 in produzione adesso (commit 5b455cb)** — Hero zoom 2000-2080 con:
-- Headline "Tutte le previsioni proiettano un recupero. Il dato osservato no."
-- Chart focused 2000-2080 (no più drop storico 1965-1995)
-- 4 release proiezione + osservato + trend lineare esteso tratteggiato
-- KPI strip 4 celle sotto
-
-**NON è ancora verificato visivamente** se il commit 5b455cb funziona davvero. Issue noti potenziali:
-- Asse X tick label tagliate dal flex container min-h-svh (utente ha segnalato in iterazione precedente)
-- Possibile sovrapposizione legend Plot con title sopra
-- Possibile compressione verticale chart se viewport piccola
-
-→ **Single entry point**: `web/components/Hero.tsx`
-
-### Cosa fare nella prossima sessione
-
-1. **Aprire https://nati-istat.vercel.app dal browser** (Chrome MCP o manuale) e fare visual audit del Hero attuale
-2. **Identificare i bug visivi residui** (asse X tagliato, etc.)
-3. **Decidere strategia Hero finale**, opzioni tra cui scegliere:
-   - **A) Mantenere zoom 2000-2080** ma fixare bug visivi (margins, height, label visibility)
-   - **B) Hero misto**: 30% top con headline + KPI, 70% sotto con grafico statico ben curato (no flex viewport)
-   - **C) Hero scrollytelling**: animazione che mostra il dato osservato che cala mentre proiezioni divergono (richiede framer-motion o custom)
-   - **D) Hero con DUE chart side-by-side**: TFT storico 1952-2024 a sinistra (compresso) + zoom proiezioni 2024-2080 a destra
-4. **Mockup veloce** (anche solo screenshot) e confronto con utente prima di implementare
-5. **Solo dopo** scelta, implementare + deploy + verifica
-
-### Constraint da rispettare
 - Target audience: italiano data-savvy, attento a infografiche e dati
-- Tono affilato senza retorica (vedi memory `feedback-tone-no-frasi-effetto`)
+- Tono affilato senza retorica (memory `feedback-tone-no-frasi-effetto`)
 - TFT acronimo italiano (NON TFR — disambigua con Trattamento Fine Rapporto)
 - Decimali italiani (1,46 NON 1.46)
 - Mobile-first, dark mode supportato, A11y WCAG AA

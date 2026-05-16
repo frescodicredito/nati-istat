@@ -1,40 +1,12 @@
 # PENDING-WORK — nati-istat
 
-**Ultimo aggiornamento:** 16 maggio 2026
+**Ultimo aggiornamento:** 16 maggio 2026 (fine sessione cap 4 + Hero finali)
 
 ---
 
-## 🔴 Blocchi prioritari
+## Stato
 
-### 1. Cap 4 — vera spiegazione metodologica del bias (priorità ALTA)
-- **Cosa**: espandere il cap 4 con una vera analisi delle ragioni per cui i modelli ISTAT/Eurostat/UN sovrastimano sistematicamente il TFT italiano. Oggi il cap 4 elenca 3 assunzioni in bullet point ma non spiega da dove vengono né perché falliscono per l'Italia.
-- **Perché bloccato**: richiede sessione dedicata con ricerca su letteratura accademica + scrittura curata. Non è un quick fix.
-- **Single entry point**: `docs/superpowers/specs/2026-05-16-cap4-spiegazione-bias-bozza.md` — spec completa con 6 punti da articolare, fonti da consultare, struttura editoriale, constraint di tono
-- **Effort post-sblocco**: 3.5-5 ore (ricerca paper 1-1.5h + scrittura 1.5h + integrazione 1h + deploy)
-- **Trigger sblocco**: prossima sessione dedicata
-- **Raccomandazione**: bozza markdown prima → conferma utente sui contenuti → integrazione codice. Eseguire PRIMA di Hero design (è il vero gap di contenuto, non solo design).
-
-### 2. Hero design finale (priorità media)
-- **Cosa**: rifare bene la sezione Hero (above-the-fold) del sito
-- **Perché bloccato**: feedback utente "fai un'analisi e cura molto questa parte". Iterazioni multiple in sessione corrente non hanno trovato la versione definitiva. Stato corrente è WIP commit `5b455cb` non visualmente verificato (issue noti: asse X potenzialmente tagliato).
-- **Single entry point**: `web/components/Hero.tsx` + `HANDOFF-SESSION-NEXT.md` sezione "Blocco residuo 2"
-- **Effort post-sblocco**: 1-2 ore di iterazione visiva con browser audit
-- **Trigger sblocco**: dopo cap 4 (così il Hero può eventualmente puntare al nuovo cap 4 come "spiegazione" oltre che "dimostrazione")
-- **Raccomandazione**: visual audit live (Chrome MCP) → mockup statici 2-3 versioni → allineamento con utente → implementazione
-
----
-
-## 🟡 5 minuti
-
-### Verifica deploy WIP commit 5b455cb
-- **Cosa**: aprire sito live e capire se Hero zoom 2000-2080 funziona o ha bug visivi (asse X tagliato, etc.)
-- **Effort**: 5 min con Chrome MCP
-- **Esito atteso**: lista bug → entra in lista 🔴 Hero design
-
-### Pulire commit WIP se sostituito
-- **Cosa**: se la prossima sessione cambia Hero, considerare squash dei commit `01be269`+`c313215`+`5b455cb` in unico commit pulito
-- **Effort**: 5 min `git rebase -i`
-- **Trigger**: completamento Hero finale
+**Nessun blocco prioritario.** Sito live e completo su https://nati-istat.vercel.app. Tutti i blocchi 🔴 di sessione precedente risolti (cap 4 espanso commit `9561445`, Hero finale commit `9561445`).
 
 ---
 
@@ -85,7 +57,19 @@
 
 ---
 
-## ✅ Recentemente chiuso (sessione 16 maggio 2026)
+## Recentemente chiuso (sessione 16 maggio 2026 parte 2)
+
+- **Cap 4 espanso** con 6 sezioni metodologiche sul bias (commit `9561445`):
+  mean reversion, catch-up fertility, convergenza europea, componente straniere
+  mal calibrata, aggiornamento tardivo, inerzia istituzionale. Bibliografia 7 fonti
+  accademiche in `/metodologia#bibliografia`. Decimali nel testo ora dinamici dal
+  dataset (allinea con la caption).
+- **Hero finale** (commit `9561445`): rimosso trend lineare estrapolato (56 anni di
+  estrapolazione non difendibili), layout senza flex min-h-svh, asse X chiaro
+  2000-2080 con tick ogni 10 anni + 2024 evidenziato, label terminali ISTAT e
+  Eurostat 2025, ruleline verticale tratteggiata sul 2024.
+
+## Recentemente chiuso (sessione 16 maggio 2026 parte 1)
 
 - F1: Release Eurostat 2019/2023/2025 + backtest empirico (commit `0e98cdb`)
 - F2: UN WPP — tentato, scartato (portal SPA, fallback UN Medium ok)

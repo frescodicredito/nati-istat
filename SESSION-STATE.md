@@ -38,8 +38,10 @@ L'utente ha condiviso uno screenshot WhatsApp con amici (Marchello, Andrea Nuovo
 | `01be269` | polish(web): Hero compatta titolo + grafico | Hero v2.1 |
 | `c313215` | fix(web): Hero fit-on-screen viewport + mobile | Hero v3 |
 | `5b455cb` | WIP(web): Hero zoom 2000-2080 — work in progress | Hero v4 WIP |
+| `7cb641f` | docs: handoff cap 4 spiegazione bias (priorita ALTA) | Docs |
+| `9561445` | feat(web): cap 4 espanso + Hero finale pulito | Cap 4 + Hero v5 |
 
-**Tag:** nessuno (no `v0.1.0` ancora — aspetta Hero finale)
+**Tag:** nessuno. Sessione 16 mag chiusa con cap 4 espanso (6 sezioni metodologiche su bias) e Hero finale (senza trend lineare estrapolato). Tutto live e verificato. Eligibile per `v1.0.0` se l'utente vuole taggare.
 
 ### Deploy / infra
 
